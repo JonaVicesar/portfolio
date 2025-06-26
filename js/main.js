@@ -1,109 +1,54 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// Animaciones del hero
-gsap.from('.hero-text', {
-    y: 100,
-    opacity: 0,
-    duration: 1,
-    delay: 0.5
+// smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
 });
 
-gsap.from('.hero-categories .category', {
-    y: 50,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    delay: 1
+// descarga del cv
+document.getElementById("download-cv").addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  const link = document.createElement("a");
+  link.href = "Jonathan_Vicesar_CV.pdf";
+  link.download = "Jonathan_Vicesar_CV.pdf";
+  link.click();
 });
 
-// Animaciones al scroll
-gsap.from('.about-image', {
-    scrollTrigger: {
-        trigger: '.about',
-        start: 'top center',
-        toggleActions: 'play none none reverse'
-    },
-    x: -100,
-    opacity: 0,
-    duration: 1
+// link al blog
+document.getElementById("blog-link").addEventListener("click", function (e) {
+  e.preventDefault();
+  
+  window.open('https://blog.jonathanvicesar.com', '_blank');//todavia no tengo blog, pero proximante ^_-
+  alert("Blog próximamente disponible");
 });
 
-gsap.from('.about-content', {
-    scrollTrigger: {
-        trigger: '.about',
-        start: 'top center',
-        toggleActions: 'play none none reverse'
-    },
-    x: 100,
-    opacity: 0,
-    duration: 1
-});
+// actualizar el nav activo al hacer scroll
+const sections = document.querySelectorAll("section[id]");
+const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-// Animación de las tech categories
-gsap.from('.tech-category', {
-    scrollTrigger: {
-        trigger: '.tech-stack',
-        start: 'top center+=100',
-        toggleActions: 'play none none reverse'
-    },
-    y: 50,
-    opacity: 0,
-    duration: 0.6,
-    stagger: 0.2
-});
+function updateActiveNav() {
+  const scrollPos = window.scrollY + 100;
 
-// Filtro de proyectos
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projects = document.querySelectorAll('.project-card');
+  sections.forEach((section) => {
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+    const id = section.getAttribute("id");
 
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remover clase active de todos los botones
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        // Agregar clase active al botón clickeado
-        button.classList.add('active');
+    if (scrollPos >= top && scrollPos < bottom) {
+      navLinks.forEach((link) => {
+        link.style.color =
+          link.getAttribute("href") === `#${id}` ? "#2d3748" : "#718096";
+      });
+    }
+  });
+}
 
-        const filter = button.dataset.filter;
-
-        projects.forEach(project => {
-            if (filter === 'all' || project.dataset.category === filter) {
-                gsap.to(project, {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.3
-                });
-            } else {
-                gsap.to(project, {
-                    opacity: 0.3,
-                    scale: 0.95,
-                    duration: 0.3
-                });
-            }
-        });
-    });
-});
-
-// Animación de la timeline
-gsap.from('.timeline-item', {
-    scrollTrigger: {
-        trigger: '.education',
-        start: 'top center',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 50,
-    duration: 0.8,
-    stagger: 0.3
-});
-
-// Animación del formulario de contacto
-gsap.from('.contact-container', {
-    scrollTrigger: {
-        trigger: '.contact',
-        start: 'top center+=100',
-        toggleActions: 'play none none reverse'
-    },
-    opacity: 0,
-    y: 50,
-    duration: 1
-});
+window.addEventListener("scroll", updateActiveNav);
