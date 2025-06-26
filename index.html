@@ -1,110 +1,201 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jonathan Vicesar</title>
-    <link rel="icon" href="assets/images/letra-j.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="icon" href="assets/images/letra-j.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
     <nav>
-        <div class="container">
-            <div class="nav-container">
-                <div class="logo">Jonathan Vicesar</div>
-                <ul class="nav-links">
-                    <li><a href="#about">Sobre mí</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
-                    <li><a href="#" id="blog-link">Blog</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="nav-container">
+          <div class="logo">Jonathan Vicesar</div>
+          <ul class="nav-links">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#" id="blog-link">Blog</a></li>
+          </ul>
+          <button class="theme-toggle" id="theme-toggle">🌙</button>
         </div>
+      </div>
     </nav>
 
     <main class="container">
-        <section class="hero">
-            <h1>Hola, soy Jonathan</h1>
-            <p class="subtitle">Software Engineer & Estudiante de Ingeniería Informática</p>
-            <p class="description">
-                Me apasiona crear soluciones tecnológicas elegantes y eficientes. 
-                Actualmente estudiando Ingeniería Informática en la Universidad Nacional de Itapúa, 
-                con experiencia en desarrollo web, aplicaciones móviles y automatización.
-            </p>
-            <div class="hero-actions">
-                <a href="mailto:jonathanrafaelvicesar@gmail.com" class="btn btn-primary">Contactar</a>
-                <a href="#" class="btn btn-secondary" id="download-cv">Descargar CV</a> <!-- todavia no tengo CV xd -->
+      <section class="hero">
+        <h1>Hola, soy Jonathan</h1>
+        <p class="subtitle">
+          Software Developer & Estudiante de Ingeniería Informática
+        </p>
+        <p class="description">
+          Me apasiona crear soluciones tecnológicas elegantes y eficientes.
+          Actualmente estudiando Ingeniería Informática en la Universidad
+          Nacional de Itapúa, con experiencia en desarrollo web, aplicaciones
+          móviles y automatización.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="mailto:jonathanrafaelvicesar@gmail.com"
+            class="btn btn-primary"
+            >Email</a
+          >
+          <a href="#" class="btn btn-secondary" id="download-cv"
+            >Descargar CV</a
+          >
+          <!-- todavia no tengo CV xd -->
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <h2>Un poco sobre mí</h2>
+          <p>Estudiante de Ingeniería Informática</p>
+          <p>
+            Cuando no estoy programando, probablemente esté viendo videos en
+            YouTube
+          </p>
+
+          <div class="tech-stack">
+            <h3>Tecnologías que uso</h3>
+            <div class="tech-list">
+              <span class="tech-item">JavaScript</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">Node.js</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Java</span>
+              <span class="tech-item">Flutter</span>
+              <span class="tech-item">HTML/CSS</span>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="about" id="about">
-            <div class="container">
-                <h2>Un poco sobre mí</h2>
-                <p>
-                    Estudiante de Ingeniería Informática
-                </p>
-                <p>
-                    Cuando no estoy programando, probablemente esté viendo videos en YouTube
-                </p>
-                
-                <div class="tech-stack">
-                    <h3>Tecnologías que uso</h3>
-                    <div class="tech-list">
-                        <span class="tech-item">JavaScript</span>
-                        <span class="tech-item">React</span>
-                        <span class="tech-item">Node.js</span>
-                        <span class="tech-item">Python</span>
-                        <span class="tech-item">Java</span>
-                        <span class="tech-item">Flutter</span>
-                        <span class="tech-item">HTML/CSS</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <section class="projects" id="projects">
+        <h2>Proyectos destacados</h2>
 
-        <section class="projects" id="projects">
-            <h2>Proyectos destacados</h2>
-            
-            <div class="project">
-                <h3>Proyecto</h3>
-                <p class="project-type">Desarrollok</p>
-                <p>
-                    Lorem Ipsum
-"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+        <div class="project">
+          <h3>RgTraslados</h3>
+          <p class="project-type">Sitio web empresarial • Argentina</p>
+          <p>
+            Sitio web completo para empresa de remises con diseño moderno y
+            funcional. Página ligera optimizada para conversión, adaptada
+            específicamente a las necesidades del cliente.
+          </p>
+          <div class="project-links">
+            <a href="#" onclick="openProjectModal('rgtraslados')"
+              >Ver detalles →</a
+            >
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">Astro</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">CSS</span>
+          </div>
+        </div>
 
-                </p>
-                <div class="project-links">
-                    <a href="#">Ver proyecto →</a>
-                    <a href="#">Código fuente</a>
-                </div>
-                <div class="project-tech">
-                    <span class="tech-badge">React</span>
-                    <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">MongoDB</span>
-                    <span class="tech-badge">Stripe API</span>
-                </div>
-            </div>
+        <div class="project">
+          <h3>Carpintería Los González</h3>
+          <p class="project-type">Web App con Panel Admin • Paraguay</p>
+          <p>
+            Aplicación web completa con frontend en React y panel de
+            administración. Incluye gestión de contenido dinámico, base de datos
+            y versión pública optimizada.
+          </p>
+          <div class="project-links">
+            <a href="#" onclick="openProjectModal('carpinteria')"
+              >Ver detalles →</a
+            >
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Supabase</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
+        </div>
 
+        <div class="project">
+          <h3>Página de Química</h3>
+          <p class="project-type">Sitio educativo interactivo</p>
+          <p>
+            Plataforma educativa diseñada para estudiantes de química con
+            ejercicios interactivos y herramientas de aprendizaje visual que
+            facilitan la comprensión de conceptos complejos.
+          </p>
+          <div class="project-links">
+            <a href="#" onclick="openProjectModal('quimica')">Ver detalles →</a>
+          </div>
+          <div class="project-tech">
+            <span class="tech-badge">HTML/CSS</span>
+            <span class="tech-badge">Bootstrap</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">Clodflare</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- Modal para proyectos -->
+      <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeProjectModal()">
+            &times;
+          </button>
+          <div class="modal-body" id="modal-body">
+            <!-- Contenido dinámico -->
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <h3>Contacto</h3>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/JonaVicesar">GitHub</a>
-                    <a href="http://linkedin.com/in/jonathan-vicesar-4a2770351/">LinkedIn</a>
-                    <a href="mailto:jonathanrafaelvicesar@gmail.com">Email</a>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Contacto</h3>
+  
+            <div class="contact-info">
+              <span
+                >📧
+                <a href="mailto:jonathanrafaelvicesar@gmail.com"
+                  >jonathanrafaelvicesar@gmail.com</a
+                ></span
+              >
+              <span>📍 Paraguay</span>
+              <span>💼 Disponible para proyectos</span>
             </div>
+          </div>
+          <div class="footer-right">
+            <h3>Sígueme</h3>
+            <div class="social-links">
+              <a
+                href="https://github.com/JonaVicesar"
+                target="_blank"
+                rel="noopener"
+                >GitHub →</a
+              >
+              <a
+                href="http://linkedin.com/in/jonathan-vicesar-4a2770351/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn →</a
+              >
+              <a href="#" id="blog-footer">Blog →</a>
+            </div>
+          </div>
         </div>
+        <div class="footer-bottom">
+          <p>Jonathan Vicesar. Hecho con ❤️ y mucho mate🧉.</p>
+        </div>
+      </div>
     </footer>
-    <script src="js/main.js"> </script>
-</body>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
