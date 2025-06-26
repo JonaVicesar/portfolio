@@ -17,7 +17,7 @@ document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
   
   const link = document.createElement("a");
-  link.href = "Jonathan_Vicesar_CV.pdf";
+  link.href = "assets/Jonathan Vicesar.pdf";
   link.download = "Jonathan_Vicesar_CV.pdf";
   link.click();
 });
