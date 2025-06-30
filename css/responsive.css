@@ -1,84 +1,304 @@
+/*responsive*/
 @media (max-width: 1200px) {
-    .container {
-        padding: 0 1.5rem;
-    }
+  .container {
+    padding: 0 1.5rem;
+  }
 
-    .hero-text h1 {
-        font-size: 4rem;
-    }
+  .hero h1 {
+    font-size: 4rem;
+  }
 
-    .title {
-        font-size: 2rem;
-    }
+  .title {
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 992px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 
-    .about-image {
-        text-align: center;
-    }
+  .about-image {
+    text-align: center;
+  }
 
-    .profile-image {
-        margin: 0 auto;
-    }
+  .profile-image {
+    margin: 0 auto;
+  }
 
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-left,
+  .footer-right {
+    text-align: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
 }
 
 @media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 3rem;
-    }
+  .hero {
+    padding: 40px 0 60px;
+  }
 
-    .title {
-        font-size: 1.8rem;
-    }
+  .hero h1 {
+    font-size: 3rem;
+  }
 
-    .hero-categories {
-        gap: 0.8rem;
-    }
+  .title {
+    font-size: 1.8rem;
+  }
 
-    .category {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-    }
+  .hero .subtitle {
+    font-size: 1.1rem;
+  }
 
-    .timeline::before {
-        left: 0;
-    }
+  .hero .description {
+    font-size: 0.95rem;
+  }
 
-    .timeline-content {
-        width: calc(100% - 2rem);
-        margin-left: 2rem !important;
-    }
+  /*nav */
+  .menu-toggle {
+    display: block;
+  }
 
-    .tech-grid {
-        grid-template-columns: 1fr;
-    }
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--nav-bg);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 15px;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .project-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-links a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+    margin: 2% auto;
+    max-height: 90vh;
+  }
+
+  .timeline::before {
+    left: 0;
+  }
+
+  .timeline-content {
+    width: calc(100% - 2rem);
+    margin-left: 2rem !important;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
+  .hero {
+    padding: 30px 0 50px;
+  }
 
-    .title {
-        font-size: 1.5rem;
-    }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
 
-    .profile-image {
-        width: 250px;
-        height: 250px;
-    }
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero .description {
+    font-size: 0.9rem;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+}
+/* Responsive para sección de tecnologías */
+
+/* Para pantallas grandes (desktop) - mantener grid actual */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tablets grandes */
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+  
+  .tech-item {
+    padding: 16px 12px;
+    min-height: 90px;
+  }
+  
+  .tech-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+  
+  .tech-item span {
+    font-size: 12px;
+  }
+}
+
+/* Tablets pequeños */
+@media (max-width: 640px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .tech-item {
+    padding: 14px 10px;
+    min-height: 85px;
+  }
+  
+  .tech-icon {
+    font-size: 26px;
+  }
+  
+  .tech-item span {
+    font-size: 11px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  .about .container {
+    padding: 0 20px;
+  }
+  
+  .tech-stack h3 {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  
+  .tech-item {
+    padding: 12px 8px;
+    min-height: 80px;
+    border-radius: 10px;
+  }
+  
+  .tech-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+  
+  .tech-item span {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .tech-item {
+    padding: 10px 6px;
+    min-height: 75px;
+  }
+  
+  .tech-icon {
+    font-size: 20px;
+  }
+  
+  .tech-item span {
+    font-size: 9px;
+  }
+}
+
+/* Ajustes adicionales para mejorar la experiencia móvil */
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 0;
+  }
+  
+  /* Reducir efectos hover en móvil para mejor performance */
+  .tech-item:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tech-item:hover .tech-icon {
+    transform: none;
+  }
+  
+  /* Hacer la animación de shimmer más sutil en móvil */
+  .tech-item::before {
+    display: none;
+  }
 }
