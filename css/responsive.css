@@ -281,13 +281,11 @@
   }
 }
 
-/* Ajustes adicionales para mejorar la experiencia móvil */
 @media (max-width: 480px) {
   .about {
     padding: 40px 0;
   }
   
-  /* Reducir efectos hover en móvil para mejor performance */
   .tech-item:hover {
     transform: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -297,7 +295,7 @@
     transform: none;
   }
   
-  /* Hacer la animación de shimmer más sutil en móvil */
+  
   .tech-item::before {
     display: none;
   }
