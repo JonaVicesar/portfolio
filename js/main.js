@@ -17,17 +17,9 @@ document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
   
   const link = document.createElement("a");
-  link.href = "assets/Jonathan Vicesar.pdf";
+  link.href = "assets/cv/Jonathan Vicesar.pdf"; 
   link.download = "Jonathan_Vicesar_CV.pdf";
   link.click();
-});
-
-// link al blog
-document.getElementById("blog-link").addEventListener("click", function (e) {
-  e.preventDefault();
-  
-  window.open('https://blog.jonathanvicesar.com', '_blank');//todavia no tengo blog, pero proximante ^_-
-  alert("Blog próximamente disponible");
 });
 
 // actualizar el nav activo al hacer scroll
