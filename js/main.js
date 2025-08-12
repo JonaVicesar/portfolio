@@ -38,7 +38,7 @@ function updateActiveNav() {
       navLinks.forEach((link) => {
         link.style.color =
           link.getAttribute("href") === `#${id}` ? "#2d3748" : "#718096";
-      });
+      });     ``  
     }
   });
 }
@@ -63,6 +63,7 @@ function toggleTheme() {
 
 function updateThemeIcon(theme) {
   const toggle = document.getElementById('theme-toggle');
+
   toggle.textContent = theme === 'dark' ? '☀️' : '🌛';
 }
 
@@ -106,6 +107,70 @@ const projectData = {
       "Recursos educativos organizados"
     ],
     tech: ["HTML/CSS", "JavaScript", "Diseño UX", "Educación Digital"]
+  }
+};
+
+// textos para cada lenguaje
+const texts = {
+  es: {
+    nav: {
+      logo: "Jonathan Vicesar",
+      about: "Sobre mí",
+      projects: "Proyectos"
+    },
+    hero: {
+      greeting: "Hola, soy Jonathan",
+      subtitle: "Software Developer & Estudiante de Ingeniería Informática",
+      description: "Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.",
+      emailBtn: "Email",
+      cvBtn: "Descargar CV"
+    },
+    about: {
+      techTitle: "Tecnologías que uso"
+    },
+    projects: {
+      title: "Proyectos destacados",
+      visitBtn: "Visitar",
+      detailsBtn: "Ver detalles ->",
+      modalFeatures: "Características principales:"
+    },
+    footer: {
+      contactTitle: "Contacto",
+      location: "Paraguay",
+      available: "Disponible para proyectos",
+      followTitle: "Sígueme",
+      madeWith: "Hecho con ❤️ y mucho mate🧉."
+    }
+  },
+  en: {
+    nav: {
+      logo: "Jonathan Vicesar", 
+      about: "About",
+      projects: "Projects"
+    },
+    hero: {
+      greeting: "Hi, I'm Jonathan",
+      subtitle: "Software Developer & Computer Engineering Student",
+      description: "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
+      emailBtn: "Email",
+      cvBtn: "Download CV"
+    },
+    about: {
+      techTitle: "Technologies I use"
+    },
+    projects: {
+      title: "Featured Projects",
+      visitBtn: "Visit",
+      detailsBtn: "View details ->",
+      modalFeatures: "Key features:"
+    },
+    footer: {
+      contactTitle: "Contact",
+      location: "Paraguay",
+      available: "Available for projects",
+      followTitle: "Follow me",
+      madeWith: "Made with ❤️ and lots of mate🧉."
+    }
   }
 };
 
