@@ -15,9 +15,9 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // descarga del cv
 document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
-  
+
   const link = document.createElement("a");
-  link.href = "assets/cv/Jonathan Vicesar.pdf"; 
+  link.href = "assets/cv/Jonathan Vicesar.pdf";
   link.download = "Jonathan_Vicesar_CV.pdf";
   link.click();
 });
@@ -38,7 +38,8 @@ function updateActiveNav() {
       navLinks.forEach((link) => {
         link.style.color =
           link.getAttribute("href") === `#${id}` ? "#2d3748" : "#718096";
-      });     ``  
+      });
+      ``;
     }
   });
 }
@@ -47,24 +48,24 @@ window.addEventListener("scroll", updateActiveNav);
 
 // dark Mode
 function initTheme() {
-  const theme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', theme);
+  const theme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", theme);
   updateThemeIcon(theme);
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  
-  document.documentElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
   updateThemeIcon(newTheme);
 }
 
 function updateThemeIcon(theme) {
-  const toggle = document.getElementById('theme-toggle');
+  const toggle = document.getElementById("theme-toggle");
 
-  toggle.textContent = theme === 'dark' ? '☀️' : '🌛';
+  toggle.textContent = theme === "dark" ? "☀️" : "🌛";
 }
 
 // Proyectos
@@ -72,42 +73,45 @@ const projectData = {
   rgtraslados: {
     title: "RgTraslados",
     type: "Sitio web empresarial • Argentina",
-    description: "Desarrollo completo de sitio web para empresa de remises, enfocado en conversión y experiencia de usuario optimizada.",
+    description:
+      "Desarrollo completo de sitio web para empresa de remises, enfocado en conversión y experiencia de usuario optimizada.",
     features: [
       "Diseño responsivo y moderno",
       "Optimización para velocidad de carga",
       "Formulario de contacto funcional",
       "Sección de servicios detallada",
-      "Información de contacto y ubicación"
+      "Información de contacto y ubicación",
     ],
-    tech: ["Astro", "JavaScript", "CSS", "Diseño Responsivo"]
+    tech: ["Astro", "JavaScript", "CSS", "Diseño Responsivo"],
   },
   carpinteria: {
     title: "Carpintería Los González",
     type: "Web App con Panel Admin • Paraguay",
-    description: "Aplicación web completa con sistema de gestión de contenido, permitiendo al cliente actualizar productos y servicios de forma autónoma.",
+    description:
+      "Aplicación web completa con sistema de gestión de contenido, permitiendo al cliente actualizar productos y servicios de forma autónoma.",
     features: [
       "Panel de administración intuitivo",
       "Gestión de productos y servicios",
       "Base de datos en tiempo real",
       "Interfaz pública optimizada",
-      "Sistema de autenticación seguro"
+      "Sistema de autenticación seguro",
     ],
-    tech: ["React", "Supabase", "JavaScript", "CSS Modules"]
+    tech: ["React", "Supabase", "JavaScript", "CSS Modules"],
   },
   quimica: {
     title: "Página de Química",
     type: "Sitio educativo interactivo",
-    description: "Plataforma educativa especializada en química, diseñada para facilitar el aprendizaje mediante ejercicios interactivos y visualizaciones.",
+    description:
+      "Plataforma educativa especializada en química, diseñada para facilitar el aprendizaje mediante ejercicios interactivos y visualizaciones.",
     features: [
       "Ejercicios interactivos personalizados",
       "Visualizaciones de conceptos químicos",
       "Sistema de práctica progresiva",
       "Interfaz amigable para estudiantes",
-      "Recursos educativos organizados"
+      "Recursos educativos organizados",
     ],
-    tech: ["HTML/CSS", "JavaScript", "Diseño UX", "Educación Digital"]
-  }
+    tech: ["HTML/CSS", "JavaScript", "Diseño UX", "Educación Digital"],
+  },
 };
 
 // textos para cada lenguaje
@@ -116,70 +120,131 @@ const texts = {
     nav: {
       logo: "Jonathan Vicesar",
       about: "Sobre mí",
-      projects: "Proyectos"
+      projects: "Proyectos",
     },
     hero: {
       greeting: "Hola, soy Jonathan",
-      subtitle: "Software Developer & Estudiante de Ingeniería Informática",
-      description: "Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.",
+      subtitle: "Software Developer & Computer Science Student",
+      description:
+        "Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.",
       emailBtn: "Email",
-      cvBtn: "Descargar CV"
+      cvBtn: "Descargar CV",
     },
     about: {
-      techTitle: "Tecnologías que uso"
+      techTitle: "Tecnologías que uso",
     },
     projects: {
       title: "Proyectos destacados",
       visitBtn: "Visitar",
       detailsBtn: "Ver detalles ->",
-      modalFeatures: "Características principales:"
+      modalFeatures: "Características principales:",
     },
     footer: {
       contactTitle: "Contacto",
       location: "Paraguay",
       available: "Disponible para proyectos",
       followTitle: "Sígueme",
-      madeWith: "Hecho con ❤️ y mucho mate🧉."
-    }
+      madeWith: "Hecho con ❤️ y mucho mate🧉.",
+    },
   },
   en: {
     nav: {
-      logo: "Jonathan Vicesar", 
+      logo: "Jonathan",
       about: "About",
-      projects: "Projects"
+      projects: "Projects",
     },
     hero: {
       greeting: "Hi, I'm Jonathan",
       subtitle: "Software Developer & Computer Engineering Student",
-      description: "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
+      description:
+        "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
       emailBtn: "Email",
-      cvBtn: "Download CV"
+      cvBtn: "Download CV",
     },
     about: {
-      techTitle: "Technologies I use"
+      techTitle: "Technologies I use",
     },
     projects: {
       title: "Featured Projects",
       visitBtn: "Visit",
       detailsBtn: "View details ->",
-      modalFeatures: "Key features:"
+      modalFeatures: "Key features:",
     },
     footer: {
       contactTitle: "Contact",
       location: "Paraguay",
       available: "Available for projects",
       followTitle: "Follow me",
-      madeWith: "Made with ❤️ and lots of mate🧉."
-    }
-  }
+      madeWith: "Made with ❤️ and lots of mate🧉.",
+    },
+  },
 };
+
+//funcion para cambiar el idoma
+function setLanguage(lang) {
+  const text = texts[lang];
+  const about =   document.querySelector(".projects h2").textContent;
+  console.log("ppp4", about);
+
+  //navbar
+  document.querySelector('a[href="#about"]').textContent = text.nav.about;
+  document.querySelector('a[href="#projects"]').textContent = text.nav.projects;
+
+  //hero
+  document.querySelector(".hero h1").textContent = text.hero.greeting;
+  document.querySelector(".hero .subtitle").textoContent = text.hero.subtitle;
+  document.querySelector(".hero .description").textContent =
+    text.hero.description;
+  document.querySelector(".hero .btn.btn-primary").textContent =
+    text.hero.emailBtn;
+  document.querySelector(".hero .btn.btn-secondary").textContent =
+    text.hero.cvBtn;
+
+  //about
+  document.querySelector(".about h3").textContent = text.about.techTitle;
+
+  //proyectos
+  document.querySelector(".projects h2").textContent = text.projects.title;
+
+  //footer
+  document.querySelector(".footer-content h3").textContent = text.footer.contactTitle;
+  document.querySelector(".footer-content .available").textContent = text.footer.available;
+  document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
+
+
+}
+
+// cambiar el idioma al cargar la página
+document.addEventListener("DOMContentLoaded", function () {
+  const userLang = navigator.language || navigator.userLanguage;
+  const lang = userLang.startsWith("es") ? "es" : "en";
+  setLanguage(lang);
+});
+
+// cambiar el idioma al hacer clic en los botones
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    const lang = this.getAttribute("data-lang");
+    console.log(`Cambiando idioma Jona: ${lang}`);
+    setLanguage(lang);
+  });
+});
+
+// event listeners para los botones de idioma
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    const lang = this.getAttribute("data-lang");
+    console.log(`Cambiando idioma a: ${lang}`);
+    setLanguage(lang);
+  });
+});
 
 // modal
 function openProjectModal(projectId) {
   const project = projectData[projectId];
-  const modal = document.getElementById('project-modal');
-  const modalBody = document.getElementById('modal-body');
-  
+  const modal = document.getElementById("project-modal");
+  const modalBody = document.getElementById("modal-body");
+
   modalBody.innerHTML = `
     <div class="modal-project">
       <h3>${project.title}</h3>
@@ -189,42 +254,48 @@ function openProjectModal(projectId) {
       <div class="modal-features">
         <h4>Características principales:</h4>
         <ul>
-          ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+          ${project.features.map((feature) => `<li>${feature}</li>`).join("")}
         </ul>
       </div>
       
       <div class="modal-tech">
-        ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+        ${project.tech
+          .map((tech) => `<span class="tech-badge">${tech}</span>`)
+          .join("")}
       </div>
     </div>
   `;
-  
-  modal.style.display = 'block';
-  document.body.style.overflow = 'hidden';
+
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden";
 }
 
 function closeProjectModal() {
-  const modal = document.getElementById('project-modal');
-  modal.style.display = 'none';
-  document.body.style.overflow = 'auto';
+  const modal = document.getElementById("project-modal");
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 // Event listeners
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   initTheme();
-  
+
   // Theme toggle
-  document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
-  
-  document.getElementById('project-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeProjectModal();
-    }
-  });
-  
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", toggleTheme);
+
+  document
+    .getElementById("project-modal")
+    .addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeProjectModal();
+      }
+    });
+
   // cerrar modal con esc
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
       closeProjectModal();
     }
   });
