@@ -180,6 +180,7 @@ const texts = {
   },
 };
 
+
 //funcion para cambiar el idoma
 function setLanguage(lang) {
   const text = texts[lang];
@@ -214,30 +215,6 @@ function setLanguage(lang) {
 
 }
 
-// cambiar el idioma al cargar la página
-document.addEventListener("DOMContentLoaded", function () {
-  const userLang = navigator.language || navigator.userLanguage;
-  const lang = userLang.startsWith("es") ? "es" : "en";
-  setLanguage(lang);
-});
-
-// cambiar el idioma al hacer clic en los botones
-document.querySelectorAll(".lang-btn").forEach((button) => {
-  button.addEventListener("click", function () {
-    const lang = this.getAttribute("data-lang");
-    console.log(`Cambiando idioma Jona: ${lang}`);
-    setLanguage(lang);
-  });
-});
-
-// event listeners para los botones de idioma
-document.querySelectorAll(".lang-btn").forEach((button) => {
-  button.addEventListener("click", function () {
-    const lang = this.getAttribute("data-lang");
-    console.log(`Cambiando idioma a: ${lang}`);
-    setLanguage(lang);
-  });
-});
 
 // modal
 function openProjectModal(projectId) {
