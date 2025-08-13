@@ -124,7 +124,7 @@ const texts = {
     },
     hero: {
       greeting: "Hola, soy Jonathan",
-      subtitle: "Software Developer & Computer Science Student",
+      subtitle: "Software Developer & Estudiante de Ingenieria Informatica",
       description:
         "Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.",
       emailBtn: "Email",
@@ -155,7 +155,7 @@ const texts = {
     },
     hero: {
       greeting: "Hi, I'm Jonathan",
-      subtitle: "Software Developer & Computer Engineering Student",
+      subtitle: "Software Developer & Computer Science Student",
       description:
         "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
       emailBtn: "Email",
@@ -180,12 +180,11 @@ const texts = {
   },
 };
 
-
 //funcion para cambiar el idoma
 function setLanguage(lang) {
   const text = texts[lang];
-  const about =   document.querySelector(".projects h2").textContent;
-  console.log("ppp4", about);
+  const about = document.querySelector(".hero .subtitle").textContent;
+  console.log(about); 
 
   //navbar
   document.querySelector('a[href="#about"]').textContent = text.nav.about;
@@ -193,7 +192,7 @@ function setLanguage(lang) {
 
   //hero
   document.querySelector(".hero h1").textContent = text.hero.greeting;
-  document.querySelector(".hero .subtitle").textoContent = text.hero.subtitle;
+  document.querySelector(".hero .subtitle").textContent = text.hero.subtitle;
   document.querySelector(".hero .description").textContent =
     text.hero.description;
   document.querySelector(".hero .btn.btn-primary").textContent =
@@ -210,10 +209,20 @@ function setLanguage(lang) {
   //footer
   document.querySelector(".footer-content h3").textContent = text.footer.contactTitle;
   document.querySelector(".footer-content .available").textContent = text.footer.available;
+  document.querySelector(".footer-right h3").textContent = text.footer.followTitle;
   document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
 
-
 }
+
+//cambiar el idioma con los botones
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", function () {
+    const lang = this.getAttribute("data-lang");
+    setLanguage(lang);
+  });
+});
+
+
 
 
 // modal
