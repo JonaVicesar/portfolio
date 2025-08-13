@@ -224,7 +224,6 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
 
 
 
-
 // modal
 function openProjectModal(projectId) {
   const project = projectData[projectId];
