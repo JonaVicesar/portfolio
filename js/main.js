@@ -12,13 +12,31 @@ async function loadProjects() {
 //detectar el idioma del usuario
 const userLanguage = navigator.language;
 
-//cargar datos 
-document.addEventListener("DOMContentLoaded", async function() {
+
+// event listeners unificados
+document.addEventListener("DOMContentLoaded", async function () {
   await loadProjects();
   console.log("aca es", projectData)
   setLanguage(userLanguage);
+  initTheme();
 
-})
+  // Theme toggle
+  document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+
+  document.getElementById("project-modal").addEventListener("click", function (e) {
+      if (e.target === this) {
+        closeProjectModal();
+      }
+    });
+
+  // cerrar modal con esc
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      closeProjectModal();
+    }
+  });
+});
+
 
 // smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -127,7 +145,7 @@ function renderProjects(lang){
 const texts = {
   es: {
     nav: {
-      logo: "Jonathan Vicesar",
+      logo: "Jona Vicesar",
       about: "Sobre mí",
       projects: "Proyectos",
     },
@@ -163,7 +181,7 @@ const texts = {
       projects: "Projects",
     },
     hero: {
-      greeting: "Hi, I'm Jonathan",
+      greeting: "Hi, I'm Jona Vicesar",
       subtitle: "Software Developer & Computer Science Student",
       description:
         "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
@@ -236,8 +254,6 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
   });
 });
 
-
-
 // modal
 function openProjectModal(position) {
   console.log("jahecha", position)
@@ -277,27 +293,3 @@ function closeProjectModal() {
   document.body.style.overflow = "auto";
 }
 
-// Event listeners
-document.addEventListener("DOMContentLoaded", function () {
-  initTheme();
-
-  // Theme toggle
-  document
-    .getElementById("theme-toggle")
-    .addEventListener("click", toggleTheme);
-
-  document
-    .getElementById("project-modal")
-    .addEventListener("click", function (e) {
-      if (e.target === this) {
-        closeProjectModal();
-      }
-    });
-
-  // cerrar modal con esc
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      closeProjectModal();
-    }
-  });
-});
