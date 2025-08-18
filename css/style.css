@@ -611,6 +611,12 @@ footer {
   border: 1px solid var(--border-color);
 }
 
+.btn-secondary:hover {
+  background-color: var(--tech-bg);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+
 /* dark mode toggle */
 .theme-toggle {
   background: none;
