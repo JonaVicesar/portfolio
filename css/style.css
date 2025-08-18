@@ -149,6 +149,28 @@ nav {
   line-height: 1.7;
 }
 
+.language-toggle {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+} 
+.language-toggle .lang-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.language-toggle .lang-btn:hover {
+  background-color: var(--tech-bg);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+
 .tech-stack {
   margin-top: 40px;
 }
