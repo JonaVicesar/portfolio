@@ -1,3 +1,25 @@
+//cargar el archivo json de proyectos
+let projectsData = null;
+async function loadProjects() {
+  try {
+    const response = await fetch("assets/projects/projects.json");
+    console.log("dddd", response);
+    projectsData = await response.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+//detectar el idioma del usuario
+const userLanguage = navigator.language;
+
+//cargar datos 
+document.addEventListener("DOMContentLoaded", async function() {
+  await loadProjects();
+  console.log("aca es", projectsData)
+  setLanguage(userLanguage);
+
+})
+
 // smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -68,51 +90,29 @@ function updateThemeIcon(theme) {
   toggle.textContent = theme === "dark" ? "☀️" : "🌛";
 }
 
-// Proyectos
-const projectData = {
-  rgtraslados: {
-    title: "RgTraslados",
-    type: "Sitio web empresarial • Argentina",
-    description:
-      "Desarrollo completo de sitio web para empresa de remises, enfocado en conversión y experiencia de usuario optimizada.",
-    features: [
-      "Diseño responsivo y moderno",
-      "Optimización para velocidad de carga",
-      "Formulario de contacto funcional",
-      "Sección de servicios detallada",
-      "Información de contacto y ubicación",
-    ],
-    tech: ["Astro", "JavaScript", "CSS", "Diseño Responsivo"],
-  },
-  carpinteria: {
-    title: "Carpintería Los González",
-    type: "Web App con Panel Admin • Paraguay",
-    description:
-      "Aplicación web completa con sistema de gestión de contenido, permitiendo al cliente actualizar productos y servicios de forma autónoma.",
-    features: [
-      "Panel de administración intuitivo",
-      "Gestión de productos y servicios",
-      "Base de datos en tiempo real",
-      "Interfaz pública optimizada",
-      "Sistema de autenticación seguro",
-    ],
-    tech: ["React", "Supabase", "JavaScript", "CSS Modules"],
-  },
-  quimica: {
-    title: "Página de Química",
-    type: "Sitio educativo interactivo",
-    description:
-      "Plataforma educativa especializada en química, diseñada para facilitar el aprendizaje mediante ejercicios interactivos y visualizaciones.",
-    features: [
-      "Ejercicios interactivos personalizados",
-      "Visualizaciones de conceptos químicos",
-      "Sistema de práctica progresiva",
-      "Interfaz amigable para estudiantes",
-      "Recursos educativos organizados",
-    ],
-    tech: ["HTML/CSS", "JavaScript", "Diseño UX", "Educación Digital"],
-  },
-};
+function renderProjects(lang){
+
+  const projectsContainer = document.querySelector('.projects');
+  const projects = projectsData[lang];
+
+  projects.forEach(project => {
+    const projectHTML = `
+      <div class="project">
+        <h3>${project.title}</h3>
+        <p class="project-type">${project.type}</p>
+        <p>${project.description}</p>
+        <div class="project-links">
+          <a href="${project.visitUrl}">Visitar</a>
+          <a href="#" onclick="openProjectModal('${project.id}')">Ver detalles -></a>
+        </div>
+        <div class="project-tech">
+          ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+        </div>
+      </div>
+    `;
+    projectsContainer.insertAdjacentHTML('beforeend', projectHTML);
+  });
+}
 
 // textos para cada lenguaje
 const texts = {
@@ -183,8 +183,8 @@ const texts = {
 //funcion para cambiar el idoma
 function setLanguage(lang) {
   const text = texts[lang];
-  const about = document.querySelector(".hero .subtitle").textContent;
-  console.log(about); 
+  const about = document.querySelector(".footer-content .available").textContent;
+  console.log(about);
 
   //navbar
   document.querySelector('a[href="#about"]').textContent = text.nav.about;
@@ -207,10 +207,15 @@ function setLanguage(lang) {
   document.querySelector(".projects h2").textContent = text.projects.title;
 
   //footer
-  document.querySelector(".footer-content h3").textContent = text.footer.contactTitle;
-  document.querySelector(".footer-content .available").textContent = text.footer.available;
-  document.querySelector(".footer-right h3").textContent = text.footer.followTitle;
+  document.querySelector(".footer-content h3").textContent =
+    text.footer.contactTitle;
+  document.querySelector(".footer-content .available").textContent =
+    text.footer.available;
+  document.querySelector(".footer-right h3").textContent =
+    text.footer.followTitle;
   document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
+
+  renderProjects(lang);
 
 }
 
@@ -221,8 +226,6 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
     setLanguage(lang);
   });
 });
-
-
 
 // modal
 function openProjectModal(projectId) {
