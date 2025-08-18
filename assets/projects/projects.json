@@ -1,0 +1,96 @@
+{
+  "es": [
+    {
+      "id": "rgtraslados",
+      "title": "RgTraslados",
+      "type": "Sitio web empresarial • Argentina",
+      "description": "Sitio web completo para empresa de remises con diseño moderno y funcional. Página ligera optimizada para conversión, adaptada específicamente a las necesidades del cliente.",
+      "visitUrl": "https://rgtraslados.com",
+      "tech": ["Astro", "JavaScript", "CSS"],
+      "features": [
+        "Diseño responsivo y moderno",
+        "Optimización para velocidad de carga",
+        "Formulario de contacto funcional",
+        "Sección de servicios detallada",
+        "Información de contacto y ubicación"
+      ]
+    },
+    {
+      "id": "carpinteria",
+      "title": "Carpintería Los González",
+      "type": "Web App con Panel Admin • Paraguay",
+      "description": "Aplicación web completa con frontend en React y panel de administración. Incluye gestión de contenido dinámico, base de datos y versión pública optimizada.",
+      "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
+      "tech": ["React", "Supabase", "JavaScript"],
+      "features": [
+        "Panel de administración intuitivo",
+        "Gestión de productos y servicios",
+        "Base de datos en tiempo real",
+        "Interfaz pública optimizada",
+        "Sistema de autenticación seguro"
+      ]
+    },
+    {
+      "id": "spotify-stats",
+      "title": "Spotify Personal Analytics",
+      "type": "Herramienta de análisis musical personal",
+      "description": "Aplicación personal que utiliza la API de Spotify para generar estadísticas musicales personalizadas - top artistas, álbumes y canciones más escuchadas.",
+      "visitUrl": "#",
+      "tech": ["React", "Spotify API", "OAuth", "JavaScript"],
+      "features": [
+        "Top artistas personalizados",
+        "Estadísticas de canciones más escuchadas",
+        "Análisis de géneros musicales",
+        "Autenticación OAuth con Spotify",
+        "Interfaz responsive y moderna"
+      ]
+    }
+  ],
+  "en": [
+    {
+      "id": "rgtraslados",
+      "title": "RgTraslados",
+      "type": "Business Website • Argentina",
+      "description": "Complete website for transportation company with modern and functional design. Lightweight page optimized for conversion, specifically adapted to client needs.",
+      "visitUrl": "https://rgtraslados.com",
+      "tech": ["Astro", "JavaScript", "CSS"],
+      "features": [
+        "Responsive and modern design",
+        "Loading speed optimization",
+        "Functional contact form",
+        "Detailed services section",
+        "Contact and location information"
+      ]
+    },
+    {
+      "id": "carpinteria", 
+      "title": "Carpintería Los González",
+      "type": "Web App with Admin Panel • Paraguay",
+      "description": "Complete web application with React frontend and administration panel. Includes dynamic content management, database and optimized public version.",
+      "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
+      "tech": ["React", "Supabase", "JavaScript"],
+      "features": [
+        "Intuitive administration panel",
+        "Product and services management", 
+        "Real-time database",
+        "Optimized public interface",
+        "Secure authentication system"
+      ]
+    },
+    {
+      "id": "spotify-stats",
+      "title": "Spotify Personal Analytics",
+      "type": "Personal Music Analytics Tool",
+      "description": "Personal application using Spotify API to generate personalized music statistics - top artists, albums and most played songs.",
+      "visitUrl": "#",
+      "tech": ["React", "Spotify API", "OAuth", "JavaScript"],
+      "features": [
+        "Personalized top artists",
+        "Most played songs statistics",
+        "Music genres analysis",
+        "OAuth authentication with Spotify",
+        "Responsive and modern interface"
+      ]
+    }
+  ]
+}
