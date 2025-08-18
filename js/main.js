@@ -1,10 +1,10 @@
 //cargar el archivo json de proyectos
-let projectsData = null;
+let projectData = null;
 async function loadProjects() {
   try {
     const response = await fetch("assets/projects/projects.json");
     console.log("dddd", response);
-    projectsData = await response.json();
+    projectData = await response.json();
   } catch (error) {
     console.log(error);
   }
@@ -15,7 +15,7 @@ const userLanguage = navigator.language;
 //cargar datos 
 document.addEventListener("DOMContentLoaded", async function() {
   await loadProjects();
-  console.log("aca es", projectsData)
+  console.log("aca es", projectData)
   setLanguage(userLanguage);
 
 })
@@ -93,9 +93,11 @@ function updateThemeIcon(theme) {
 function renderProjects(lang){
 
   const projectsContainer = document.querySelector('.projects');
-  const projects = projectsData[lang];
+  const projects = projectData[lang];
+  let cont = 0;
 
-  projects.forEach(project => {
+  projects.forEach((project) => {
+    console.log("hereee", project.title)
     const projectHTML = `
       <div class="project">
         <h3>${project.title}</h3>
@@ -103,7 +105,8 @@ function renderProjects(lang){
         <p>${project.description}</p>
         <div class="project-links">
           <a href="${project.visitUrl}">Visitar</a>
-          <a href="#" onclick="openProjectModal('${project.id}')">Ver detalles -></a>
+        
+          <a href="#" onclick="openProjectModal('${cont}')">Ver detalles -></a>
         </div>
         <div class="project-tech">
           ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
@@ -111,6 +114,8 @@ function renderProjects(lang){
       </div>
     `;
     projectsContainer.insertAdjacentHTML('beforeend', projectHTML);
+    cont += 1;
+    console.log("yyy", cont)
   });
 }
 
@@ -227,9 +232,13 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
   });
 });
 
+
+
 // modal
-function openProjectModal(projectId) {
-  const project = projectData[projectId];
+function openProjectModal(position) {
+  console.log("jahecha", position)
+  const project = projectData[userLanguage][position];
+  
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
 
