@@ -94,7 +94,11 @@ function renderProjects(lang){
 
   const projectsContainer = document.querySelector('.projects');
   const projects = projectData[lang];
+  const actualProjects = document.querySelectorAll('.project');
   let cont = 0;
+
+  actualProjects.forEach((project) => project.remove())
+
 
   projects.forEach((project) => {
     console.log("hereee", project.title)
@@ -237,7 +241,7 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
 // modal
 function openProjectModal(position) {
   console.log("jahecha", position)
-  const project = projectData[userLanguage][position];
+  const project = projectData[userLanguage][position  ];
   
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
