@@ -10,7 +10,7 @@ async function loadProjects() {
   }
 }
 //detectar el idioma del usuario
-const userLanguage = navigator.language;
+let userLanguage = navigator.language;
 
 
 // event listeners unificados
@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   });
 });
-
 
 // smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -112,7 +111,13 @@ function renderProjects(lang){
 
   const projectsContainer = document.querySelector('.projects');
   const projects = projectData[lang];
+  
+  const details = texts[lang].projects.detailsBtn;
+console.log("nnnnn", details)
+  const visit = texts[lang].projects.visitBtn;
+
   const actualProjects = document.querySelectorAll('.project');
+
   let cont = 0;
 
   actualProjects.forEach((project) => project.remove())
@@ -126,9 +131,9 @@ function renderProjects(lang){
         <p class="project-type">${project.type}</p>
         <p>${project.description}</p>
         <div class="project-links">
-          <a href="${project.visitUrl}">Visitar</a>
+          <a href="${project.visitUrl}">${visit}</a>
         
-          <a href="#" onclick="openProjectModal('${cont}')">Ver detalles -></a>
+          <a href="#" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
         </div>
         <div class="project-tech">
           ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
@@ -164,7 +169,7 @@ const texts = {
       title: "Proyectos destacados",
       visitBtn: "Visitar",
       detailsBtn: "Ver detalles ->",
-      modalFeatures: "Características principales:",
+      modalFeatures: "Características principales",
     },
     footer: {
       contactTitle: "Contacto",
@@ -195,7 +200,7 @@ const texts = {
       title: "Featured Projects",
       visitBtn: "Visit",
       detailsBtn: "View details ->",
-      modalFeatures: "Key features:",
+      modalFeatures: "Key features",
     },
     footer: {
       contactTitle: "Contact",
@@ -209,6 +214,7 @@ const texts = {
 
 //funcion para cambiar el idoma
 function setLanguage(lang) {
+  userLanguage = lang;
   const text = texts[lang];
   const about = document.querySelector(".footer-content .available").textContent;
   console.log(about);
@@ -242,6 +248,7 @@ function setLanguage(lang) {
     text.footer.followTitle;
   document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
 
+  
   renderProjects(lang);
 
 }
@@ -256,8 +263,11 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
 
 // modal
 function openProjectModal(position) {
+  const lang = userLanguage;
   console.log("jahecha", position)
   const project = projectData[userLanguage][position  ];
+  const modalFeaturesTitle = texts[lang].projects.modalFeatures;
+  console.log("jjjj", modalFeaturesTitle)
   
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
@@ -269,7 +279,7 @@ function openProjectModal(position) {
       <p>${project.description}</p>
       
       <div class="modal-features">
-        <h4>Características principales:</h4>
+        <h4>${modalFeaturesTitle}</h4>
         <ul>
           ${project.features.map((feature) => `<li>${feature}</li>`).join("")}
         </ul>
