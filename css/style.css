@@ -126,8 +126,8 @@ nav {
 /* tecnologias  */
 .about {
   padding: 60px 0;
+  border-radius: 6px;
   background-color: var(--bg-secondary);
-  margin: 0 -20px;
 }
 
 .about .container {
@@ -171,102 +171,112 @@ nav {
   border-color: var(--primary-color);
 }
 
-.tech-stack {
-  margin-top: 40px;
-}
+        .tech-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-.tech-stack h3 {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 32px;
-  text-align: center;
-}
+        .section-header {
+            margin-bottom: 32px;
+        }
 
-.tech-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
+        .section-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
 
-.tech-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 16px;
-  background-color: var(--tech-bg);
-  border-radius: 12px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  min-height: 100px;
-  position: relative;
-  overflow: hidden;
-}
+        .section-subtitle {
+            font-size: 14px;
+            color: #718096;
+        }
 
-.tech-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
-}
+        .tech-category {
+            margin-bottom: 24px;
+        }
 
-.tech-item:hover::before {
-  left: 100%;
-}
+        .category-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
 
-.tech-icon {
-  font-size: 32px;
-  margin-bottom: 8px;
-  transition: transform 0.3s ease;
-}
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
 
-/* Colores específicos para cada tecnología */
-.js-icon { color: #f7df1e; }
-.react-icon { color: #61dafb; }
-.node-icon { color: #339933; }
-.python-icon { color: #3776ab; }
-.java-icon { color: #ed8b00; }
-.flutter-icon { color: #02569b; }
-.astro-icon { color: #ff5d01; }
-.supabase-icon { color: #3ecf8e; }
-.postgres-icon { color: #336791; }
-.bootstrap-icon { color: #7952b3; }
-.html-icon { color: #e34f26; }
-.css-icon { color: #1572b6; }
+        .tech-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: #fff;
+            border: 1px solid #e2e8f0;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #2d3748;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: default;
+        }
 
-.tech-item span {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-align: center;
-  transition: color 0.3s ease;
-}
+        .tech-badge:hover {
+            border-color: #cbd5e0;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
 
-.tech-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  border-color: var(--primary-color);
-}
+        .tech-badge i {
+            font-size: 14px;
+        }
 
-.tech-item:hover .tech-icon {
-  transform: scale(1.1);
-}
+        /* Colores de iconos */
+        .js-icon { color: #f7df1e; }
+        .react-icon { color: #61dafb; }
+        .node-icon { color: #339933; }
+        .python-icon { color: #3776ab; }
+        .java-icon { color: #ed8b00; }
+        .flutter-icon { color: #02569b; }
+        .astro-icon { color: #ff5d01; }
+        .supabase-icon { color: #3ecf8e; }
+        .postgres-icon { color: #336791; }
+        .bootstrap-icon { color: #7952b3; }
+        .html-icon { color: #e34f26; }
+        .css-icon { color: #1572b6; }
 
-.tech-item:hover span {
-  color: var(--text-primary);
-}
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            background-color: #1a202c;
+        }
 
-.tech-item:active {
-  transform: translateY(-2px);
-}
+        [data-theme="dark"] .section-title {
+            color: #f7fafc;
+        }
+
+        [data-theme="dark"] .section-subtitle,
+        [data-theme="dark"] .category-title {
+            color: #a0aec0;
+        }
+
+        [data-theme="dark"] .tech-badge {
+            background-color: #2d3748;
+            border-color: #4a5568;
+            color: #e2e8f0;
+        }
+
+        [data-theme="dark"] .tech-badge:hover {
+            border-color: #718096;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+
 
 /* Projects Section */
 .projects {
