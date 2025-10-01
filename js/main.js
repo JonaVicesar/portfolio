@@ -128,7 +128,7 @@ function renderProjects(lang){
           <p class="project-type">${project.type}</p>
           <p>${project.description}</p>
           <div class="project-links">
-            <a href="${project.visitUrl}">${visit}</a>
+            <a href="${project.visitUrl}" target=_blank>${visit}</a>
             <a href="#" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
           </div>
           <div class="project-tech">
