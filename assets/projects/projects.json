@@ -13,7 +13,17 @@
         "Formulario de contacto funcional",
         "Sección de servicios detallada",
         "Información de contacto y ubicación"
-      ]
+      ],
+
+      "images": [
+    "assets/projects/rgtraslados/img1.png",
+    "assets/projects/rgtraslados/img2.png",
+        "assets/projects/rgtraslados/img3.png",
+    "assets/projects/rgtraslados/img4.png",
+        "assets/projects/rgtraslados/img5.png",
+    "assets/projects/rgtraslados/img6.png"
+      ],
+      "coverImage": ["assets/projects/rgtraslados/img2.png"]
     },
     {
       "id": "carpinteria",
@@ -28,7 +38,18 @@
         "Base de datos en tiempo real",
         "Interfaz pública optimizada",
         "Sistema de autenticación seguro"
-      ]
+      ],
+
+      "images": [
+    "assets/projects/carpinteria/img1.png",
+    "assets/projects/carpinteria/img2.png",
+        "assets/projects/carpinteria/img3.png",
+    "assets/projects/carpinteria/img4.png",
+        "assets/projects/carpinteria/img5.png",
+    "assets/projects/carpinteria/img6.png",
+    "assets/projects/carpinteria/img7.png"
+      ],
+      "coverImage": ["assets/projects/carpinteria/img1.png"]
     },
     {
       "id": "spotify-stats",
@@ -43,7 +64,16 @@
         "Análisis de géneros musicales",
         "Autenticación OAuth con Spotify",
         "Interfaz responsive y moderna"
-      ]
+      ],
+      "images": [
+    "assets/projects/spotistats/img1.png",
+    "assets/projects/spotistats/img2.png",
+        "assets/projects/spotistats/img3.png",
+    "assets/projects/spotistats/img4.png",
+        "assets/projects/spotistats/img5.png",
+    "assets/projects/spotistats/img6.png"
+      ],
+      "coverImage": ["assets/projects/spotistats/img1.png"]
     }
   ],
   "en": [
@@ -60,7 +90,16 @@
         "Functional contact form",
         "Detailed services section",
         "Contact and location information"
-      ]
+      ],
+      "images": [
+    "assets/projects/rgtraslados/img1.png",
+    "assets/projects/rgtraslados/img2.png",
+        "assets/projects/rgtraslados/img3.png",
+    "assets/projects/rgtraslados/img4.png",
+        "assets/projects/rgtraslados/img5.png",
+    "assets/projects/rgtraslados/img6.png"
+      ],
+      "coverImage": ["assets/projects/rgtraslados/img2.png"]
     },
     {
       "id": "carpinteria", 
@@ -75,7 +114,17 @@
         "Real-time database",
         "Optimized public interface",
         "Secure authentication system"
-      ]
+      ],
+      "images": [
+    "assets/projects/carpinteria/img1.png",
+    "assets/projects/carpinteria/img2.png",
+        "assets/projects/carpinteria/img3.png",
+    "assets/projects/carpinteria/img4.png",
+        "assets/projects/carpinteria/img5.png",
+    "assets/projects/carpinteria/img6.png",
+    "assets/projects/carpinteria/img7.png"
+      ],
+      "coverImage": ["assets/projects/carpinteria/img1.png"]
     },
     {
       "id": "spotify-stats",
@@ -90,7 +139,16 @@
         "Music genres analysis",
         "OAuth authentication with Spotify",
         "Responsive and modern interface"
-      ]
+      ],
+      "images": [
+    "assets/projects/spotistats/img1.png",
+    "assets/projects/spotistats/img2.png",
+        "assets/projects/spotistats/img3.png",
+    "assets/projects/spotistats/img4.png",
+        "assets/projects/spotistats/img5.png",
+    "assets/projects/spotistats/img6.png"
+      ],
+      "coverImage": ["assets/projects/spotistats/img1.png"]
     }
   ]
 }
