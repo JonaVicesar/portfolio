@@ -271,13 +271,18 @@ function openProjectModal(position) {
 
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
-
   const imagesHTML =
     project.images && project.images.length > 0
       ? `<div class="modal-images">
          ${project.images
            .map(
-             (img) => `<img src="${img}" alt="${project.title}" loading="lazy">`
+             (img) => `<img 
+               src="${img}" 
+               alt="${project.title}" 
+               loading="lazy"
+               onclick="openLightbox('${img}', ${JSON.stringify(project.images).replace(/"/g, "'")})"
+               style="cursor: pointer;"
+             >`
            )
            .join("")}
        </div>`
@@ -315,3 +320,65 @@ function closeProjectModal() {
   modal.style.display = "none";
   document.body.style.overflow = "auto";
 }
+
+// lightbox
+
+let currentImageIndex = 0;
+let currentImages = [];
+
+function openLightbox(imageUrl, allImages) {
+  currentImages = allImages;
+  currentImageIndex = allImages.indexOf(imageUrl);
+  
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  
+  lightboxImg.src = imageUrl;
+  lightbox.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  
+  updateImageCounter();
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+
+function previousImage() {
+  currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById('lightbox-img').src = currentImages[currentImageIndex];
+  updateImageCounter();
+}
+
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % currentImages.length;
+  document.getElementById('lightbox-img').src = currentImages[currentImageIndex];
+  updateImageCounter();
+}
+
+function updateImageCounter() {
+  const counter = document.getElementById('image-counter');
+  counter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('lightbox')?.addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
+  
+  document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
+  document.getElementById('lightbox-prev')?.addEventListener('click', previousImage);
+  document.getElementById('lightbox-next')?.addEventListener('click', nextImage);
+  document.addEventListener('keydown', function(e) {
+    const lightbox = document.getElementById('lightbox');
+    if (lightbox && lightbox.style.display === 'flex') {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') previousImage();
+      if (e.key === 'ArrowRight') nextImage();
+    }
+  });
+});

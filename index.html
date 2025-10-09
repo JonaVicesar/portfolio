@@ -14,7 +14,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
-    />  
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
@@ -26,13 +26,13 @@
           <ul class="nav-links">
             <li><a href="#about">Sobre mí</a></li>
             <li><a href="#projects">Proyectos</a></li>
-          <!--  <li><a href="#" id="blog-link">Blog</a></li> -->
+            <!--  <li><a href="#" id="blog-link">Blog</a></li> -->
           </ul>
           <button class="theme-toggle" id="theme-toggle">🌙</button>
 
           <div class="language-toggle" id="language-toggle">
             <button class="lang-btn" data-lang="es">ES</button>
-            <button class="lang-btn" data-lang="en">EN</button> 
+            <button class="lang-btn" data-lang="en">EN</button>
           </div>
         </div>
       </div>
@@ -45,7 +45,9 @@
           Software Developer & Estudiante de Ingeniería Informática
         </p>
         <p class="description">
-          Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.
+          Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo
+          experiencia en desarrollo web, apps móviles y automatización, y
+          disfruto convertir ideas en productos funcionales.
         </p>
         <div class="hero-actions">
           <a
@@ -62,82 +64,80 @@
       <section class="about" id="about">
         <div class="container">
           <div class="tech-stack">
-
-        <!-- Primera fila -->
-        <div class="tech-section">
-        <div class="tech-category">
-            <h3 class="category-title">Frontend</h3>
-            <div class="tech-tags">
-                <span class="tech-badge">
+            <!-- Primera fila -->
+            <div class="tech-section">
+              <div class="tech-category">
+                <h3 class="category-title">Frontend</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
                     <i class="fab fa-js-square js-icon"></i>
                     JavaScript
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-react react-icon"></i>
                     React
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-html5 html-icon"></i>
                     HTML5
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-css3-alt css-icon"></i>
                     CSS3
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-bootstrap bootstrap-icon"></i>
                     Bootstrap
-                </span>
-            </div>
-        </div>
+                  </span>
+                </div>
+              </div>
 
-        <div class="tech-category">
-            <h3 class="category-title">Backend</h3>
-            <div class="tech-tags">
-                <span class="tech-badge">
+              <div class="tech-category">
+                <h3 class="category-title">Backend</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
                     <i class="fab fa-node-js node-icon"></i>
                     Node.js
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-python python-icon"></i>
                     Python
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fab fa-java java-icon"></i>
                     Java
-                </span>
-            </div>
-        </div>
+                  </span>
+                </div>
+              </div>
 
-        <div class="tech-category">
-            <h3 class="category-title">Database</h3>
-            <div class="tech-tags">
-                <span class="tech-badge">
+              <div class="tech-category">
+                <h3 class="category-title">Database</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
                     <i class="fas fa-database supabase-icon"></i>
                     Supabase
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fas fa-database postgres-icon"></i>
                     PostgreSQL
-                </span>
-            </div>
-        </div>
+                  </span>
+                </div>
+              </div>
 
-        <div class="tech-category">
-            <h3 class="category-title">Mobile & Frameworks</h3>
-            <div class="tech-tags">
-                <span class="tech-badge">
+              <div class="tech-category">
+                <h3 class="category-title">Mobile & Frameworks</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
                     <i class="fas fa-mobile-alt flutter-icon"></i>
                     Flutter
-                </span>
-                <span class="tech-badge">
+                  </span>
+                  <span class="tech-badge">
                     <i class="fas fa-rocket astro-icon"></i>
                     Astro
-                </span>
+                  </span>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-
           </div>
         </div>
       </section>
@@ -146,7 +146,6 @@
         <h2>Proyectos destacados</h2>
 
         <!-- Contenedor de proyectos, ahora se cambian al json -->
-
       </section>
 
       <!-- Modal para proyectos -->
@@ -161,6 +160,18 @@
         </div>
       </div>
     </main>
+
+    <div id="lightbox" class="lightbox">
+      <span id="lightbox-close" class="lightbox-close">&times;</span>
+      <button id="lightbox-prev" class="lightbox-nav lightbox-prev">
+        &#10094;
+      </button>
+      <img id="lightbox-img" class="lightbox-content" alt="Imagen ampliada" />
+      <button id="lightbox-next" class="lightbox-nav lightbox-next">
+        &#10095;
+      </button>
+      <div id="image-counter" class="image-counter"></div>
+    </div>
 
     <footer>
       <div class="container">
