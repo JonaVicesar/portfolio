@@ -12,18 +12,21 @@ async function loadProjects() {
 //detectar el idioma del usuario
 let userLanguage = navigator.language;
 
-
 // event listeners unificados
 document.addEventListener("DOMContentLoaded", async function () {
   await loadProjects();
-  console.log("aca es", projectData)
+  console.log("aca es", projectData);
   setLanguage(userLanguage);
   initTheme();
 
   // Theme toggle
-  document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+  document
+    .getElementById("theme-toggle")
+    .addEventListener("click", toggleTheme);
 
-  document.getElementById("project-modal").addEventListener("click", function (e) {
+  document
+    .getElementById("project-modal")
+    .addEventListener("click", function (e) {
       if (e.target === this) {
         closeProjectModal();
       }
@@ -107,37 +110,41 @@ function updateThemeIcon(theme) {
   toggle.textContent = theme === "dark" ? "☀️" : "🌛";
 }
 
-function renderProjects(lang){
-  const projectsContainer = document.querySelector('.projects');
+function renderProjects(lang) {
+  const projectsContainer = document.querySelector(".projects");
   const projects = projectData[lang];
-  
+
   const details = texts[lang].projects.detailsBtn;
   const visit = texts[lang].projects.visitBtn;
 
-  const actualProjects = document.querySelectorAll('.project');
+  const actualProjects = document.querySelectorAll(".project");
   let cont = 0;
 
-  actualProjects.forEach((project) => project.remove())
+  actualProjects.forEach((project) => project.remove());
 
   projects.forEach((project) => {
     const projectHTML = `
       <div class="project">
-        <img src="${project.coverImage}" alt="${project.title}" class="project-image" loading="lazy">
+        <img src="${project.coverImage}" alt="${
+      project.title
+    }" class="project-image" loading="lazy">
         <div class="project-content">
           <h3>${project.title}</h3>
           <p class="project-type">${project.type}</p>
           <p>${project.description}</p>
           <div class="project-links">
             <a href="${project.visitUrl}" target=_blank>${visit}</a>
-            <a href="#" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
+            <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
           </div>
           <div class="project-tech">
-            ${project.tech.map(tech => `<span class="tech-badge">${tech}</span>`).join('')}
+            ${project.tech
+              .map((tech) => `<span class="tech-badge">${tech}</span>`)
+              .join("")}
           </div>
         </div>
       </div>
     `;
-    projectsContainer.insertAdjacentHTML('beforeend', projectHTML);
+    projectsContainer.insertAdjacentHTML("beforeend", projectHTML);
     cont += 1;
   });
 }
@@ -211,7 +218,9 @@ const texts = {
 function setLanguage(lang) {
   userLanguage = lang;
   const text = texts[lang];
-  const about = document.querySelector(".footer-content .available").textContent;
+  const about = document.querySelector(
+    ".footer-content .available"
+  ).textContent;
   console.log(about);
 
   //navbar
@@ -243,9 +252,7 @@ function setLanguage(lang) {
     text.footer.followTitle;
   document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
 
-  
   renderProjects(lang);
-
 }
 
 //cambiar el idioma con los botones
@@ -261,15 +268,20 @@ function openProjectModal(position) {
   const lang = userLanguage;
   const project = projectData[userLanguage][position];
   const modalFeaturesTitle = texts[lang].projects.modalFeatures;
-  
+
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
 
-  const imagesHTML = project.images && project.images.length > 0 
-    ? `<div class="modal-images">
-         ${project.images.map(img => `<img src="${img}" alt="${project.title}" loading="lazy">`).join('')}
+  const imagesHTML =
+    project.images && project.images.length > 0
+      ? `<div class="modal-images">
+         ${project.images
+           .map(
+             (img) => `<img src="${img}" alt="${project.title}" loading="lazy">`
+           )
+           .join("")}
        </div>`
-    : '';
+      : "";
 
   modalBody.innerHTML = `
     <div class="modal-project">
@@ -287,7 +299,9 @@ function openProjectModal(position) {
       </div>
       
       <div class="modal-tech">
-        ${project.tech.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
+        ${project.tech
+          .map((tech) => `<span class="tech-badge">${tech}</span>`)
+          .join("")}
       </div>
     </div>
   `;
