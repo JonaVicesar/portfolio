@@ -132,10 +132,14 @@ function renderProjects(lang) {
           <h3>${project.title}</h3>
           <p class="project-type">${project.type}</p>
           <p>${project.description}</p>
-          <div class="project-links">
-            <a href="${project.visitUrl}" target=_blank>${visit}</a>
-            <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
-          </div>
+         <div class="project-links">
+  ${
+    project.visitUrl && project.visitUrl !== "#"
+      ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
+      : '<span class="disabled">You cannot visit this site</span>'
+  }
+  <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
+</div>
           <div class="project-tech">
             ${project.tech
               .map((tech) => `<span class="tech-badge">${tech}</span>`)
@@ -280,7 +284,9 @@ function openProjectModal(position) {
                src="${img}" 
                alt="${project.title}" 
                loading="lazy"
-               onclick="openLightbox('${img}', ${JSON.stringify(project.images).replace(/"/g, "'")})"
+               onclick="openLightbox('${img}', ${JSON.stringify(
+               project.images
+             ).replace(/"/g, "'")})"
                style="cursor: pointer;"
              >`
            )
@@ -329,56 +335,65 @@ let currentImages = [];
 function openLightbox(imageUrl, allImages) {
   currentImages = allImages;
   currentImageIndex = allImages.indexOf(imageUrl);
-  
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
   lightboxImg.src = imageUrl;
-  lightbox.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  
+  lightbox.style.display = "flex";
+  document.body.style.overflow = "hidden";
+
   updateImageCounter();
 }
 
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.style.display = 'none';
-  document.body.style.overflow = 'auto';
+  const lightbox = document.getElementById("lightbox");
+  lightbox.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
 function previousImage() {
-  currentImageIndex = (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-  document.getElementById('lightbox-img').src = currentImages[currentImageIndex];
+  currentImageIndex =
+    (currentImageIndex - 1 + currentImages.length) % currentImages.length;
+  document.getElementById("lightbox-img").src =
+    currentImages[currentImageIndex];
   updateImageCounter();
 }
 
 function nextImage() {
   currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-  document.getElementById('lightbox-img').src = currentImages[currentImageIndex];
+  document.getElementById("lightbox-img").src =
+    currentImages[currentImageIndex];
   updateImageCounter();
 }
 
 function updateImageCounter() {
-  const counter = document.getElementById('image-counter');
+  const counter = document.getElementById("image-counter");
   counter.textContent = `${currentImageIndex + 1} / ${currentImages.length}`;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('lightbox')?.addEventListener('click', function(e) {
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("lightbox")?.addEventListener("click", function (e) {
     if (e.target === this) {
       closeLightbox();
     }
   });
-  
-  document.getElementById('lightbox-close')?.addEventListener('click', closeLightbox);
-  document.getElementById('lightbox-prev')?.addEventListener('click', previousImage);
-  document.getElementById('lightbox-next')?.addEventListener('click', nextImage);
-  document.addEventListener('keydown', function(e) {
-    const lightbox = document.getElementById('lightbox');
-    if (lightbox && lightbox.style.display === 'flex') {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') previousImage();
-      if (e.key === 'ArrowRight') nextImage();
+
+  document
+    .getElementById("lightbox-close")
+    ?.addEventListener("click", closeLightbox);
+  document
+    .getElementById("lightbox-prev")
+    ?.addEventListener("click", previousImage);
+  document
+    .getElementById("lightbox-next")
+    ?.addEventListener("click", nextImage);
+  document.addEventListener("keydown", function (e) {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox && lightbox.style.display === "flex") {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") previousImage();
+      if (e.key === "ArrowRight") nextImage();
     }
   });
 });

@@ -238,6 +238,31 @@
       font-size: 12px;
       padding: 5px 10px;
     }
+
+    .lightbox-close {
+      top: 10px;
+      right: 15px;
+      font-size: 35px;
+    }
+
+    .lightbox-nav {
+      font-size: 24px;
+      padding: 12px 16px;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    .image-counter {
+      bottom: 20px;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
   }
 }
 
