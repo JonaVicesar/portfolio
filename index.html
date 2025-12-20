@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jonathan Vicesar</title>
+    <link rel="icon" href="assets/images/JV.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-container">
+          <div class="logo">Jonathan Vicesar</div>
+          <ul class="nav-links">
+            <li><a href="#about">Sobre mí</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <!--  <li><a href="#" id="blog-link">Blog</a></li> -->
+          </ul>
+          <button class="theme-toggle" id="theme-toggle">🌙</button>
+
+          <div class="language-toggle" id="language-toggle">
+            <button class="lang-btn" data-lang="es">ES</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Hola, soy Jonathan</h1>
+        <p class="subtitle">
+          Software Developer & Estudiante de Ingeniería Informática
+        </p>
+        <p class="description">
+          Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo
+          experiencia en desarrollo web, apps móviles y automatización, y
+          disfruto convertir ideas en productos funcionales.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="mailto:jonathanrafaelvicesar@gmail.com"
+            class="btn btn-primary"
+            >Email</a
+          >
+          <a href="#" class="btn btn-secondary" id="download-cv"
+            >Descargar CV</a
+          >
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="container">
+          <div class="tech-stack">
+            <!-- Primera fila -->
+            <div class="tech-section">
+              <div class="tech-category">
+                <h3 class="category-title">Frontend</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
+                    <i class="fab fa-js-square js-icon"></i>
+                    JavaScript
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-react react-icon"></i>
+                    React
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-html5 html-icon"></i>
+                    HTML5
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-css3-alt css-icon"></i>
+                    CSS3
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-bootstrap bootstrap-icon"></i>
+                    Bootstrap
+                  </span>
+                </div>
+              </div>
+
+              <div class="tech-category">
+                <h3 class="category-title">Backend</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
+                    <i class="fab fa-node-js node-icon"></i>
+                    Node.js
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-python python-icon"></i>
+                    Python
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fab fa-java java-icon"></i>
+                    Java
+                  </span>
+                </div>
+              </div>
+
+              <div class="tech-category">
+                <h3 class="category-title">Database</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
+                    <i class="fas fa-database supabase-icon"></i>
+                    Supabase
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fas fa-database postgres-icon"></i>
+                    PostgreSQL
+                  </span>
+                </div>
+              </div>
+
+              <div class="tech-category">
+                <h3 class="category-title">Mobile & Frameworks</h3>
+                <div class="tech-tags">
+                  <span class="tech-badge">
+                    <i class="fas fa-mobile-alt flutter-icon"></i>
+                    Flutter
+                  </span>
+                  <span class="tech-badge">
+                    <i class="fas fa-rocket astro-icon"></i>
+                    Astro
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <h2>Proyectos destacados</h2>
+
+        <!-- Contenedor de proyectos, ahora se cambian al json -->
+      </section>
+
+      <!-- Modal para proyectos -->
+      <div class="project-modal" id="project-modal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeProjectModal()">
+            &times;
+          </button>
+          <div class="modal-body" id="modal-body">
+            <!-- Contenido dinámico -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+      <span id="lightbox-close" class="lightbox-close">&times;</span>
+      <button id="lightbox-prev" class="lightbox-nav lightbox-prev">
+        &#10094;
+      </button>
+      <img id="lightbox-img" class="lightbox-content" alt="Imagen ampliada" />
+      <button id="lightbox-next" class="lightbox-nav lightbox-next">
+        &#10095;
+      </button>
+      <div id="image-counter" class="image-counter"></div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <h3>Contacto</h3>
+
+            <div class="contact-info">
+              <span
+                >📧
+                <a href="mailto:jonathanrafaelvicesar@gmail.com"
+                  >jonathanrafaelvicesar@gmail.com</a
+                ></span
+              >
+              <span>📍 Paraguay</span>
+              <span class="available">💼 Disponible para proyectos</span>
+            </div>
+          </div>
+          <div class="footer-right">
+            <h3>Sígueme</h3>
+            <div class="social-links">
+              <a
+                href="https://github.com/JonaVicesar"
+                target="_blank"
+                rel="noopener"
+                >GitHub →</a
+              >
+              <a
+                href="http://linkedin.com/in/jonathan-vicesar-4a2770351/"
+                target="_blank"
+                rel="noopener"
+                >LinkedIn →</a
+              >
+              <a href="#" id="blog-footer">Blog →</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Jonathan Vicesar. Hecho con ❤️ y mucho mate🧉.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

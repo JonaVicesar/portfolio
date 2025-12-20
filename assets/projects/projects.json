@@ -1,0 +1,310 @@
+{
+  "es": [
+    {
+      "id": "ornella-inventario",
+      "title": "Sistema de Gestión de Inventario",
+      "type": "Web App con Panel Admin • Paraguay",
+      "description": "Aplicación web completa para gestión de inventario con panel de administración. Sistema robusto para control de stock, productos y categorías con interfaz intuitiva y moderna.",
+      "visitUrl": "",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Gestión completa de inventario",
+        "Control de stock en tiempo real",
+        "Administración de productos y categorías",
+        "Panel de administración intuitivo",
+        "Base de datos en tiempo real",
+        "Sistema de autenticación seguro"
+      ],
+      "images": [
+        "assets/projects/ornella-inventario/img1.png",
+        "assets/projects/ornella-inventario/img2.png",
+        "assets/projects/ornella-inventario/img3.png",
+        "assets/projects/ornella-inventario/img4.png"
+      ],
+      "coverImage": [
+        "assets/projects/ornella-inventario/img1.png"
+      ]
+    },
+    {
+      "id": "ornella-floreria",
+      "title": "Florería Ornella",
+      "type": "Catálogo Web con Sistema de Pedidos • Paraguay",
+      "description": "Catálogo digital moderno para florería con sistema automatizado de pedidos por WhatsApp. Interfaz intuitiva que permite a los clientes explorar productos por categorías y enviar pedidos formateados directamente al chat de WhatsApp de la empresa.",
+      "visitUrl": "https://ornella.pages.dev",
+      "tech": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Catálogo de productos organizado por categorías",
+        "Sistema de carrito de compras interactivo",
+        "Generación automática de pedidos formateados",
+        "Redirección inteligente a WhatsApp con mensaje pre-cargado",
+        "Cálculo automático de costos y delivery",
+        "Formulario de datos del destinatario",
+        "Diseño moderno con gradientes vibrantes",
+        "Optimizado para dispositivos móviles",
+        "Interfaz rápida y ligera"
+      ],
+      "images": [
+        "assets/projects/ornella-floreria/img1.png",
+        "assets/projects/ornella-floreria/img2.png",
+        "assets/projects/ornella-floreria/img3.png"
+      ],
+      "coverImage": [
+        "assets/projects/ornella-floreria/img1.png"
+      ]
+    },
+    {
+      "id": "rgtraslados",
+      "title": "RgTraslados",
+      "type": "Sitio web empresarial • Argentina",
+      "description": "Sitio web completo para empresa de remises con diseño moderno y funcional. Página ligera optimizada para conversión, adaptada específicamente a las necesidades del cliente.",
+      "visitUrl": "https://rgtraslados.com",
+      "tech": [
+        "Astro",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Diseño responsivo y moderno",
+        "Optimización para velocidad de carga",
+        "Formulario de contacto funcional",
+        "Sección de servicios detallada",
+        "Información de contacto y ubicación"
+      ],
+      "images": [
+        "assets/projects/rgtraslados/img1.png",
+        "assets/projects/rgtraslados/img2.png",
+        "assets/projects/rgtraslados/img3.png",
+        "assets/projects/rgtraslados/img4.png",
+        "assets/projects/rgtraslados/img5.png",
+        "assets/projects/rgtraslados/img6.png"
+      ],
+      "coverImage": [
+        "assets/projects/rgtraslados/img2.png"
+      ]
+    },
+    {
+      "id": "carpinteria",
+      "title": "Carpintería Los González",
+      "type": "Web App con Panel Admin • Paraguay",
+      "description": "Aplicación web completa con frontend en React y panel de administración. Incluye gestión de contenido dinámico, base de datos y versión pública optimizada.",
+      "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript"
+      ],
+      "features": [
+        "Panel de administración intuitivo",
+        "Gestión de productos y servicios",
+        "Base de datos en tiempo real",
+        "Interfaz pública optimizada",
+        "Sistema de autenticación seguro"
+      ],
+      "images": [
+        "assets/projects/carpinteria/img1.png",
+        "assets/projects/carpinteria/img2.png",
+        "assets/projects/carpinteria/img3.png",
+        "assets/projects/carpinteria/img4.png",
+        "assets/projects/carpinteria/img5.png",
+        "assets/projects/carpinteria/img6.png",
+        "assets/projects/carpinteria/img7.png"
+      ],
+      "coverImage": [
+        "assets/projects/carpinteria/img1.png"
+      ]
+    },
+    {
+      "id": "spotify-stats",
+      "title": "Spotify Personal Analytics",
+      "type": "Herramienta de análisis musical personal",
+      "description": "Aplicación personal que utiliza la API de Spotify para generar estadísticas musicales personalizadas - top artistas, álbumes y canciones más escuchadas.",
+      "visitUrl": "#",
+      "tech": [
+        "React",
+        "Spotify API",
+        "OAuth",
+        "JavaScript"
+      ],
+      "features": [
+        "Top artistas personalizados",
+        "Estadísticas de canciones más escuchadas",
+        "Análisis de géneros musicales",
+        "Autenticación OAuth con Spotify",
+        "Interfaz responsive y moderna"
+      ],
+      "images": [
+        "assets/projects/spotistats/img1.png",
+        "assets/projects/spotistats/img2.png",
+        "assets/projects/spotistats/img3.png",
+        "assets/projects/spotistats/img4.png",
+        "assets/projects/spotistats/img5.png"
+      ],
+      "coverImage": [
+        "assets/projects/spotistats/img1.png"
+      ]
+    }
+  ],
+  "en": [
+    {
+      "id": "ornella-inventario",
+      "title": "Inventory Management System",
+      "type": "Web App with Admin Panel • Paraguay",
+      "description": "Complete web application for inventory management with administration panel. Robust system for stock control, products and categories with intuitive and modern interface.",
+      "visitUrl": "",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Complete inventory management",
+        "Real-time stock control",
+        "Product and category administration",
+        "Intuitive administration panel",
+        "Real-time database",
+        "Secure authentication system"
+      ],
+      "images": [
+        "assets/projects/ornella-inventario/img1.png",
+        "assets/projects/ornella-inventario/img2.png",
+        "assets/projects/ornella-inventario/img3.png",
+        "assets/projects/ornella-inventario/img4.png"
+      ],
+      "coverImage": [
+        "assets/projects/ornella-inventario/img1.png"
+      ]
+    },
+    {
+      "id": "ornella-floreria",
+      "title": "Florería Ornella",
+      "type": "Web Catalog with Order System • Paraguay",
+      "description": "Modern digital catalog for flower shop with automated WhatsApp ordering system. Intuitive interface that allows customers to browse products by categories and send formatted orders directly to the company's WhatsApp chat.",
+      "visitUrl": "https://ornella.pages.dev",
+      "tech": [
+        "React",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Product catalog organized by categories",
+        "Interactive shopping cart system",
+        "Automatic formatted order generation",
+        "Smart WhatsApp redirection with pre-loaded message",
+        "Automatic cost and delivery calculation",
+        "Recipient information form",
+        "Modern design with vibrant gradients",
+        "Optimized for mobile devices",
+        "Fast and lightweight interface"
+      ],
+      "images": [
+        "assets/projects/ornella-floreria/img1.png",
+        "assets/projects/ornella-floreria/img2.png",
+        "assets/projects/ornella-floreria/img3.png"
+      ],
+      "coverImage": [
+        "assets/projects/ornella-floreria/img1.png"
+      ]
+    },
+    {
+      "id": "rgtraslados",
+      "title": "RgTraslados",
+      "type": "Business Website • Argentina",
+      "description": "Complete website for transportation company with modern and functional design. Lightweight page optimized for conversion, specifically adapted to client needs.",
+      "visitUrl": "https://rgtraslados.com",
+      "tech": [
+        "Astro",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Responsive and modern design",
+        "Loading speed optimization",
+        "Functional contact form",
+        "Detailed services section",
+        "Contact and location information"
+      ],
+      "images": [
+        "assets/projects/rgtraslados/img1.png",
+        "assets/projects/rgtraslados/img2.png",
+        "assets/projects/rgtraslados/img3.png",
+        "assets/projects/rgtraslados/img4.png",
+        "assets/projects/rgtraslados/img5.png",
+        "assets/projects/rgtraslados/img6.png"
+      ],
+      "coverImage": [
+        "assets/projects/rgtraslados/img2.png"
+      ]
+    },
+    {
+      "id": "carpinteria",
+      "title": "Carpintería Los González",
+      "type": "Web App with Admin Panel • Paraguay",
+      "description": "Complete web application with React frontend and administration panel. Includes dynamic content management, database and optimized public version.",
+      "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript"
+      ],
+      "features": [
+        "Intuitive administration panel",
+        "Product and services management",
+        "Real-time database",
+        "Optimized public interface",
+        "Secure authentication system"
+      ],
+      "images": [
+        "assets/projects/carpinteria/img1.png",
+        "assets/projects/carpinteria/img2.png",
+        "assets/projects/carpinteria/img3.png",
+        "assets/projects/carpinteria/img4.png",
+        "assets/projects/carpinteria/img5.png",
+        "assets/projects/carpinteria/img6.png",
+        "assets/projects/carpinteria/img7.png"
+      ],
+      "coverImage": [
+        "assets/projects/carpinteria/img1.png"
+      ]
+    },
+    {
+      "id": "spotify-stats",
+      "title": "Spotify Personal Analytics",
+      "type": "Personal Music Analytics Tool",
+      "description": "Personal application using Spotify API to generate personalized music statistics - top artists, albums and most played songs.",
+      "visitUrl": "#",
+      "tech": [
+        "React",
+        "Spotify API",
+        "OAuth",
+        "JavaScript"
+      ],
+      "features": [
+        "Personalized top artists",
+        "Most played songs statistics",
+        "Music genres analysis",
+        "OAuth authentication with Spotify",
+        "Responsive and modern interface"
+      ],
+      "images": [
+        "assets/projects/spotistats/img1.png",
+        "assets/projects/spotistats/img2.png",
+        "assets/projects/spotistats/img3.png",
+        "assets/projects/spotistats/img4.png",
+        "assets/projects/spotistats/img5.png"
+      ],
+      "coverImage": [
+        "assets/projects/spotistats/img1.png"
+      ]
+    }
+  ]
+}

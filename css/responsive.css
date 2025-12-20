@@ -1,0 +1,425 @@
+/*responsive*/
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image {
+    text-align: center;
+  }
+
+  .profile-image {
+    margin: 0 auto;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Footer */
+  /* Tablets */
+  @media (max-width: 768px) {
+    footer {
+      padding: 32px 0 16px;
+    }
+
+    .footer-content {
+      gap: 24px;
+    }
+
+    .footer-left h3,
+    .footer-right h3 {
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info span,
+    .social-links a {
+      font-size: 12px;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      padding-top: 14px;
+    }
+  }
+
+  /* Móviles */
+  @media (max-width: 480px) {
+    footer {
+      padding: 24px 0 12px;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-left,
+    .footer-right {
+      text-align: center;
+    }
+
+    .footer-left h3,
+    .footer-right h3 {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .footer-left p {
+      margin-bottom: 12px;
+    }
+
+    .contact-info {
+      gap: 4px;
+      align-items: center;
+    }
+
+    .contact-info span {
+      font-size: 11px;
+    }
+
+    .social-links {
+      flex-direction: row;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      font-size: 11px;
+      padding: 2px 0;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      margin-top: 16px;
+      padding-top: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 10px;
+      line-height: 1.4;
+    }
+  }
+
+  /* Móviles muy pequeños */
+  @media (max-width: 360px) {
+    footer {
+      padding: 20px 0 10px;
+    }
+
+    .footer-content {
+      gap: 16px;
+    }
+
+    .contact-info span {
+      font-size: 10px;
+    }
+
+    .social-links a {
+      font-size: 10px;
+    }
+
+    .footer-bottom {
+      margin-top: 12px;
+      padding-top: 10px;
+    }
+
+    .footer-bottom p {
+      font-size: 9px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 40px 0 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .title {
+      font-size: 1.8rem;
+    }
+
+    .hero .subtitle {
+      font-size: 1.1rem;
+    }
+
+    .hero .description {
+      font-size: 0.95rem;
+    }
+
+    /*nav */
+    .menu-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 70px;
+      left: 0;
+      right: 0;
+      background-color: var(--nav-bg);
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 0;
+      gap: 15px;
+      transform: translateY(-150%);
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+    }
+
+    .hero-actions {
+      flex-direction: column;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .project-links {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .project-links a {
+      display: block;
+      padding: 8px 0;
+    }
+
+    .modal-content {
+      padding: 20px;
+      width: 95%;
+      margin: 2% auto;
+      max-height: 90vh;
+    }
+
+    .timeline::before {
+      left: 0;
+    }
+
+    .timeline-content {
+      width: calc(100% - 2rem);
+      margin-left: 2rem !important;
+    }
+
+    .tech-badge {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+
+    .lightbox-close {
+      top: 10px;
+      right: 15px;
+      font-size: 35px;
+    }
+
+    .lightbox-nav {
+      font-size: 24px;
+      padding: 12px 16px;
+    }
+
+    .lightbox-prev {
+      left: 10px;
+    }
+
+    .lightbox-next {
+      right: 10px;
+    }
+
+    .image-counter {
+      bottom: 20px;
+      font-size: 14px;
+      padding: 6px 12px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 30px 0 50px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .hero .description {
+    font-size: 0.9rem;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Responsive para sección de tecnologías */
+
+/* Para pantallas grandes (desktop) - mantener grid actual */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tablets grandes */
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .tech-item {
+    padding: 16px 12px;
+    min-height: 90px;
+  }
+
+  .tech-icon {
+    font-size: 28px;
+    margin-bottom: 6px;
+  }
+
+  .tech-item span {
+    font-size: 12px;
+  }
+}
+
+/* Tablets pequeños */
+@media (max-width: 640px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .tech-item {
+    padding: 14px 10px;
+    min-height: 85px;
+  }
+
+  .tech-icon {
+    font-size: 26px;
+  }
+
+  .tech-item span {
+    font-size: 11px;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: 480px) {
+  .about .container {
+    padding: 0 20px;
+  }
+
+  .tech-stack h3 {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .tech-item {
+    padding: 12px 8px;
+    min-height: 80px;
+    border-radius: 10px;
+  }
+
+  .tech-icon {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .tech-item span {
+    font-size: 10px;
+    line-height: 1.2;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 360px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tech-item {
+    padding: 10px 6px;
+    min-height: 75px;
+  }
+
+  .tech-icon {
+    font-size: 20px;
+  }
+
+  .tech-item span {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 40px 0;
+  }
+
+  .tech-item:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .tech-item:hover .tech-icon {
+    transform: none;
+  }
+
+  .tech-item::before {
+    display: none;
+  }
+}
