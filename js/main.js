@@ -167,7 +167,7 @@ const texts = {
       greeting: "Hola, soy Jonathan",
       subtitle: "Software Developer & Estudiante de Ingenieria Informatica",
       description:
-        "Me apasiona crear soluciones simples, útiles y bien pensadas. Tengo experiencia en desarrollo web, apps móviles y automatización, y disfruto convertir ideas en productos funcionales.",
+        "Desarrollo software desde los 18. A los 21 ya tengo sistemas en producción para negocios reales — desde catálogos digitales con pedidos por WhatsApp hasta paneles de administración completos. Me muevo cómodo en el stack completo y me importa que las cosas funcionen bien para quien las usa, no solo que compilen.",
       emailBtn: "Email",
       cvBtn: "Descargar CV",
     },
@@ -199,7 +199,7 @@ const texts = {
       greeting: "Hi, I'm Jona Vicesar",
       subtitle: "Software Developer & Computer Science Student",
       description:
-        "I'm passionate about creating simple, useful and well-thought solutions. I have experience in web development, mobile apps and automation, and I enjoy turning ideas into functional products.",
+        "I've been building software since I was 18. At 21, I already have systems running in production for real businesses — from digital catalogs with WhatsApp ordering to full admin panels. I'm comfortable across the full stack, and I care about things working well for the people using them, not just compiling.",
       emailBtn: "Email",
       cvBtn: "Download CV",
     },
