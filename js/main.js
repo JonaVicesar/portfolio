@@ -61,9 +61,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
 
+  const lang = userLanguage === "en" ? "en" : "es";
   const link = document.createElement("a");
-  link.href = "assets/cv/Jonathan Vicesar.pdf";
-  link.download = "Jonathan_Vicesar_CV.pdf";
+  link.href = `assets/cv/Jonathan_Vicesar_CV_Portfolio_${lang.toUpperCase()}.pdf`;
+  link.download = `Jonathan_Vicesar_CV_${lang.toUpperCase()}.pdf`;
   link.click();
 });
 
@@ -139,7 +140,7 @@ function renderProjects(lang) {
   ${
     project.visitUrl && project.visitUrl !== "#"
       ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
-      : '<span class="disabled">You cannot visit this site</span>'
+      : `<span class="disabled">${texts[lang].projects.privateProject}</span>`
   }
   <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
 </div>
@@ -179,6 +180,7 @@ const texts = {
       visitBtn: "Visitar",
       detailsBtn: "Ver detalles ->",
       modalFeatures: "Características principales",
+      privateProject: "Proyecto privado",
     },
     footer: {
       contactTitle: "Contacto",
@@ -210,6 +212,7 @@ const texts = {
       visitBtn: "Visit",
       detailsBtn: "View details ->",
       modalFeatures: "Key features",
+      privateProject: "Private project",
     },
     footer: {
       contactTitle: "Contact",
