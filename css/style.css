@@ -703,6 +703,12 @@ footer {
   margin-bottom: 12px;
 }
 
+   .footer-bottom {
+      font-size: 12px;
+      margin-top: 14px;
+      padding-top: 8px;
+    }
+
 .social-links {
   display: flex;
   flex-direction: column;
