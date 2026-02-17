@@ -123,6 +123,42 @@
       ]
     },
     {
+      "id": "hashtag-celu",
+      "title": "HashtagCelu",
+      "type": "Catálogo Web con Panel Admin • Argentina",
+      "description": "Catálogo digital para tienda de celulares y accesorios con sistema automatizado de pedidos por WhatsApp y panel de administración completo. Los clientes exploran productos por categorías, arman su pedido y lo envían formateado directamente al WhatsApp de la tienda. El panel admin permite gestionar pedidos, imprimir tickets y actualizar el catálogo en tiempo real con notificaciones.",
+      "visitUrl": "https://catalogo-hashtagcelu.pages.dev/",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Catálogo de productos organizado por categorías",
+        "Sistema de carrito de compras interactivo",
+        "Generación automática de pedidos formateados",
+        "Redirección inteligente a WhatsApp con mensaje pre-cargado",
+        "Panel de administración completo",
+        "Gestión y seguimiento de pedidos",
+        "Impresión de tickets desde el panel",
+        "Actualización del catálogo en tiempo real",
+        "Sistema de notificaciones",
+        "Base de datos en tiempo real con Supabase",
+        "Diseño responsivo optimizado para móviles"
+      ],
+      "images": [
+        "assets/projects/hashtagcelu/img1.jpg",
+        "assets/projects/hashtagcelu/img2.jpg",
+        "assets/projects/hashtagcelu/img3.jpg",
+        "assets/projects/hashtagcelu/img4.jpg",
+        "assets/projects/hashtagcelu/img5.png"
+      ],
+      "coverImage": [
+        "assets/projects/hashtagcelu/img5.png"
+      ]
+    },
+    {
       "id": "spotify-stats",
       "title": "Spotify Personal Analytics",
       "type": "Herramienta de análisis musical personal",
@@ -274,6 +310,42 @@
       ],
       "coverImage": [
         "assets/projects/carpinteria/img1.png"
+      ]
+    },
+    {
+      "id": "hashtag-celu",
+      "title": "HashtagCelu",
+      "type": "Web Catalog with Admin Panel • Argentina",
+      "description": "Digital catalog for a phone and accessories store with automated WhatsApp ordering system and complete administration panel. Customers browse products by category, build their order and send it formatted directly to the store's WhatsApp. The admin panel allows managing orders, printing tickets and updating the catalog in real time with notifications.",
+      "visitUrl": "https://catalogo-hashtagcelu.pages.dev/",
+      "tech": [
+        "React",
+        "Supabase",
+        "JavaScript",
+        "CSS"
+      ],
+      "features": [
+        "Product catalog organized by categories",
+        "Interactive shopping cart system",
+        "Automatic formatted order generation",
+        "Smart WhatsApp redirection with pre-loaded message",
+        "Complete administration panel",
+        "Order management and tracking",
+        "Ticket printing from the panel",
+        "Real-time catalog updates",
+        "Notification system",
+        "Real-time database with Supabase",
+        "Responsive design optimized for mobile"
+      ],
+      "images": [
+        "assets/projects/hashtagcelu/img1.jpg",
+        "assets/projects/hashtagcelu/img2.jpg",
+        "assets/projects/hashtagcelu/img3.jpg",
+        "assets/projects/hashtagcelu/img4.jpg",
+        "assets/projects/hashtagcelu/img5.png"
+      ],
+      "coverImage": [
+        "assets/projects/hashtagcelu/img5.png"
       ]
     },
     {
