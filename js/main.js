@@ -60,7 +60,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // descarga del cv
 document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
-
   const lang = userLanguage === "en" ? "en" : "es";
   const link = document.createElement("a");
   link.href = `assets/cv/Jonathan_Vicesar_CV_Portfolio_${lang.toUpperCase()}.pdf`;
@@ -129,25 +128,25 @@ function renderProjects(lang) {
   projects.forEach((project) => {
     const projectHTML = `
       <div class="project">
-        <img src="${project.coverImage}" alt="${
-      project.title
-    }" class="project-image" loading="lazy">
+        <img src="${project.coverImage}" alt="${project.title}" class="project-image" loading="lazy">
         <div class="project-content">
-          <h3>${project.title}</h3>
-          <p class="project-type">${project.type}</p>
-          <p>${project.description}</p>
-         <div class="project-links">
-  ${
-    project.visitUrl && project.visitUrl !== "#"
-      ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
-      : `<span class="disabled">${texts[lang].projects.privateProject}</span>`
-  }
-  <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')"> ${details} </a>
-</div>
-          <div class="project-tech">
-            ${project.tech
-              .map((tech) => `<span class="tech-badge">${tech}</span>`)
-              .join("")}
+          <div>
+            <h3>${project.title}</h3>
+            <p class="project-type">${project.type}</p>
+            <p>${project.description}</p>
+          </div>
+          <div>
+            <div class="project-links">
+              ${
+                project.visitUrl && project.visitUrl !== "#"
+                  ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
+                  : `<span class="disabled">${texts[lang].projects.privateProject}</span>`
+              }
+              <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')">${details}</a>
+            </div>
+            <div class="project-tech">
+              ${project.tech.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
+            </div>
           </div>
         </div>
       </div>
