@@ -201,21 +201,23 @@
     }
 
     .hero-actions {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
 
     .btn {
-      width: 100%;
+      width: auto;
     }
 
     .project-links {
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .project-links a {
-      display: block;
-      padding: 8px 0;
+      display: inline-flex;
+      padding: 0;
     }
 
     .modal-content {
@@ -421,5 +423,173 @@
 
   .tech-item::before {
     display: none;
+  }
+}
+
+/* -- PROJECT CARD: horizontal en todos los tamaños -- */
+
+/* Tablet y mobile: imagen más pequeña, altura ajustada */
+@media (max-width: 768px) {
+  .project {
+    height: 150px !important;
+  }
+
+  .project-image,
+  .project-image-placeholder {
+    width: 140px !important;
+    min-width: 140px !important;
+    max-width: 140px !important;
+  }
+
+  .project h3 {
+    font-size: 15px !important;
+  }
+
+  .project p {
+    font-size: 12px !important;
+    -webkit-line-clamp: 2;
+  }
+
+  .project .project-type {
+    font-size: 11px !important;
+  }
+
+  .project-content {
+    padding: 14px 16px !important;
+  }
+
+  .project-links a {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .project {
+    height: 130px !important;
+  }
+
+  .project-image,
+  .project-image-placeholder {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+  }
+
+  .project h3 {
+    font-size: 13px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .project p {
+    font-size: 11px !important;
+    -webkit-line-clamp: 2;
+    line-height: 1.4 !important;
+  }
+
+  .project .project-type {
+    font-size: 10px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .project-content {
+    padding: 10px 12px !important;
+  }
+
+  .project-links a {
+    font-size: 11px !important;
+  }
+
+  .project-tech .tech-badge {
+    font-size: 10px !important;
+    padding: 2px 8px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .project {
+    height: 120px !important;
+  }
+
+  .project-image,
+  .project-image-placeholder {
+    width: 90px !important;
+    min-width: 90px !important;
+    max-width: 90px !important;
+  }
+
+  .project h3 {
+    font-size: 12px !important;
+  }
+
+  .project p {
+    display: none !important; /* muy poco espacio, ocultar descripción */
+  }
+}
+
+/* -- STACK: label fijo izquierda + badges en fila con wrap -- */
+.tech-category {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.category-title {
+  min-width: 80px !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 4px !important;
+}
+
+.tech-tags {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+}
+
+.tech-tags .tech-badge {
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 480px) {
+  .category-title {
+    min-width: 65px !important;
+    font-size: 10px !important;
+  }
+
+  .tech-section .tech-badge {
+    font-size: 11px !important;
+    padding: 3px 7px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .category-title {
+    min-width: 55px !important;
+  }
+}
+
+/* -- MODAL IMAGENES: siempre en fila -- */
+@media (max-width: 768px) {
+  .modal-images {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .modal-images img {
+    height: 120px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-images {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+  }
+
+  .modal-images img {
+    height: 100px !important;
   }
 }

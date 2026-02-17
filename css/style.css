@@ -293,74 +293,133 @@ nav {
 
 .project {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color: var(--bg-secondary);
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 32px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  margin-bottom: 20px;
   border: 1px solid var(--border-color);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 180px; /* altura fija para todas las cards */
 }
 
-.project-links a:hover {
-  color: #2a4e8a;
+.project:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
-.project-image {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-  display: block;
-}
-
-.project-content {
-  padding: 24px;
-}
-
-  
 .project:last-child {
-  border-bottom: none;
   margin-bottom: 0;
 }
 
+/* Imagen: cuadrado fijo, nunca se estira */
+.project-image {
+  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Placeholder emoji */
+.project-image-placeholder {
+  width: 180px;
+  min-width: 180px;
+  max-width: 180px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--tech-bg);
+  border-right: 1px solid var(--border-color);
+  flex-shrink: 0;
+  font-size: 52px;
+}
+
+/* Contenido: layout vertical con texto arriba y badges abajo */
+.project-content {
+  padding: 18px 20px;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.project-content-top {
+  overflow: hidden;
+}
+
 .project h3 {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
-  color: #1a202c;
-  margin-bottom: 8px;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
 }
 
 .project .project-type {
-  font-size: 14px;
-  color: #718096;
-  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project p {
-  font-size: 16px;
-  color: #4a5568;
-  margin-bottom: 20px;
-  line-height: 1.7;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Pie de la card: links + badges */
+.project-content-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .project-links {
   display: flex;
-  gap: 16px;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .project-links a {
-  font-size: 14px;
-  color: #718096;
+  font-size: 13px;
+  color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.project-links a:hover {
+  color: var(--text-primary);
 }
 
 
 .project-tech {
-  margin-top: 16px;
   display: flex;
+  margin-top: auto;
+  padding-top: 8px;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -777,4 +836,99 @@ footer {
 .theme-toggle:hover {
   color: var(--text-primary);
   background-color: var(--tech-bg);
+}
+
+/* ── STACK COMPACTO ── */
+.stack-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stack-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stack-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .stack-label {
+  color: #a0aec0;
+}
+/* ── TECH-STACK LAYOUT HORIZONTAL ── */
+.tech-stack {
+  padding: 20px 0 8px;
+}
+
+.tech-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-category {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0 !important;
+}
+
+.category-title {
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #718096 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  min-width: 88px !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+[data-theme="dark"] .category-title {
+  color: #a0aec0 !important;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+/* Redefine tech-badge for the stack section */
+.tech-section .tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.tech-section .tech-badge:hover {
+  border-color: #cbd5e0;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.tech-section .tech-badge i {
+  font-size: 13px;
 }
