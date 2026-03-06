@@ -131,6 +131,28 @@
       ],
       "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
+        {
+      "id": "sheetsbase",
+      "category": "personal",
+      "title": "SheetsBase",
+      "type": "Librería Open Source • npm",
+      "description": "Cliente de consultas para Google Sheets con una API similar a Supabase. En lugar de lidiar con la API cruda de Google Sheets, tenés una interfaz encadenada y limpia para hacer CRUD, filtros, caché automático e IDs.",
+      "visitUrl": "https://sheetsbase-example.onrender.com",
+      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
+      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
+      "coverImage": "",
+      "coverEmoji": "📦",
+      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
+      "features": [
+        "API encadenada estilo Supabase: .select(), .eq(), .gt(), .order(), .limit()",
+        "CRUD completo con generación automática de IDs (UUID, short, timestamp, readable)",
+        "Caché integrado con TTL de 5 min y auto-invalidación en escrituras (~160x más rápido en hits)",
+        "Sin servidor separado — corre directo en tu app Node.js",
+        "Autenticación por Service Account de Google Cloud",
+        "Demo en vivo: coffee-shop dashboard conectado a una hoja real"
+      ],
+      "images": []
+    },
     {
       "id": "spotify-stats",
       "category": "personal",
@@ -154,28 +176,6 @@
         "assets/projects/spotistats/img5.png"
       ],
       "coverImage": "assets/projects/spotistats/img1.png"
-    },
-    {
-      "id": "sheetsbase",
-      "category": "personal",
-      "title": "SheetsBase",
-      "type": "Librería Open Source • npm",
-      "description": "Cliente de consultas para Google Sheets con una API similar a Supabase. En lugar de lidiar con la API cruda de Google Sheets, tenés una interfaz encadenada y limpia para hacer CRUD, filtros, caché automático e IDs.",
-      "visitUrl": "https://sheetsbase-example.onrender.com",
-      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
-      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
-      "coverImage": "",
-      "coverEmoji": "📦",
-      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
-      "features": [
-        "API encadenada estilo Supabase: .select(), .eq(), .gt(), .order(), .limit()",
-        "CRUD completo con generación automática de IDs (UUID, short, timestamp, readable)",
-        "Caché integrado con TTL de 5 min y auto-invalidación en escrituras (~160x más rápido en hits)",
-        "Sin servidor separado — corre directo en tu app Node.js",
-        "Autenticación por Service Account de Google Cloud",
-        "Demo en vivo: coffee-shop dashboard conectado a una hoja real"
-      ],
-      "images": []
     }
   ],
   "en": [
@@ -310,6 +310,28 @@
       ],
       "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
+        {
+      "id": "sheetsbase",
+      "category": "personal",
+      "title": "SheetsBase",
+      "type": "Open Source Library • npm",
+      "description": "A query client for Google Sheets with a Supabase-like API. Instead of dealing with the raw Google Sheets API, you get a clean chainable interface for CRUD, filters, built-in cache, and auto IDs.",
+      "visitUrl": "https://sheetsbase-example.onrender.com",
+      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
+      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
+      "coverImage": "",
+      "coverEmoji": "📦",
+      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
+      "features": [
+        "Supabase-like chainable API: .select(), .eq(), .gt(), .order(), .limit()",
+        "Full CRUD with automatic ID generation (UUID, short, timestamp, readable)",
+        "Built-in cache with 5-min TTL and auto-invalidation on writes (~160x faster on hits)",
+        "No separate server needed — runs directly in your Node.js app",
+        "Google Cloud Service Account authentication",
+        "Live demo: coffee-shop dashboard connected to a real spreadsheet"
+      ],
+      "images": []
+    },
     {
       "id": "spotify-stats",
       "category": "personal",
@@ -333,28 +355,6 @@
         "assets/projects/spotistats/img5.png"
       ],
       "coverImage": "assets/projects/spotistats/img1.png"
-    },
-    {
-      "id": "sheetsbase",
-      "category": "personal",
-      "title": "SheetsBase",
-      "type": "Open Source Library • npm",
-      "description": "A query client for Google Sheets with a Supabase-like API. Instead of dealing with the raw Google Sheets API, you get a clean chainable interface for CRUD, filters, built-in cache, and auto IDs.",
-      "visitUrl": "https://sheetsbase-example.onrender.com",
-      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
-      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
-      "coverImage": "",
-      "coverEmoji": "📦",
-      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
-      "features": [
-        "Supabase-like chainable API: .select(), .eq(), .gt(), .order(), .limit()",
-        "Full CRUD with automatic ID generation (UUID, short, timestamp, readable)",
-        "Built-in cache with 5-min TTL and auto-invalidation on writes (~160x faster on hits)",
-        "No separate server needed — runs directly in your Node.js app",
-        "Google Cloud Service Account authentication",
-        "Live demo: coffee-shop dashboard connected to a real spreadsheet"
-      ],
-      "images": []
     }
   ]
 }
