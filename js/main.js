@@ -3,22 +3,21 @@ let projectData = null;
 async function loadProjects() {
   try {
     const response = await fetch("assets/projects/projects.json");
-    console.log("dddd", response);
     projectData = await response.json();
   } catch (error) {
     console.log(error);
   }
 }
-//detectar el idioma del usuario
-let userLanguage = navigator.language.slice(0, 2); //ahora solo obtener las dos primeras letras ("en" no en-US )
-console.log('lenguaje', userLanguage)
 
-console.log('funciona', document.querySelector('a[href="#about"]').textContent)
+// estado del filtro activo
+let activeFilter = "all";
+
+//detectar el idioma del usuario
+let userLanguage = navigator.language.slice(0, 2);
 
 // event listeners unificados
 document.addEventListener("DOMContentLoaded", async function () {
   await loadProjects();
-  console.log("aca es", projectData);
   setLanguage(userLanguage);
   initTheme();
 
@@ -40,6 +39,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     if (e.key === "Escape") {
       closeProjectModal();
     }
+  });
+
+  // filtros de proyectos
+  document.querySelectorAll(".filter-btn").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+      this.classList.add("active");
+      activeFilter = this.getAttribute("data-filter");
+      renderProjects(userLanguage);
+    });
   });
 });
 
@@ -84,7 +95,6 @@ function updateActiveNav() {
         link.style.color =
           link.getAttribute("href") === `#${id}` ? "#2d3748" : "#718096";
       });
-      ``;
     }
   });
 }
@@ -101,7 +111,6 @@ function initTheme() {
 function toggleTheme() {
   const currentTheme = document.documentElement.getAttribute("data-theme");
   const newTheme = currentTheme === "dark" ? "light" : "dark";
-
   document.documentElement.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
   updateThemeIcon(newTheme);
@@ -109,26 +118,56 @@ function toggleTheme() {
 
 function updateThemeIcon(theme) {
   const toggle = document.getElementById("theme-toggle");
-
   toggle.textContent = theme === "dark" ? "☀️" : "🌛";
 }
 
 function renderProjects(lang) {
   const projectsContainer = document.querySelector(".projects");
-  const projects = projectData[lang];
+  const allProjects = projectData[lang];
+
+  // filtrar según categoría activa
+  const projects =
+    activeFilter === "all"
+      ? allProjects
+      : allProjects.filter((p) => p.category === activeFilter);
 
   const details = texts[lang].projects.detailsBtn;
   const visit = texts[lang].projects.visitBtn;
 
-  const actualProjects = document.querySelectorAll(".project");
-  let cont = 0;
+  // limpiar cards existentes
+  document.querySelectorAll(".project").forEach((p) => p.remove());
 
-  actualProjects.forEach((project) => project.remove());
+  projects.forEach((project, index) => {
+    // índice real en el array original (necesario para el modal)
+    const realIndex = allProjects.indexOf(project);
 
-  projects.forEach((project) => {
+    // imagen o emoji placeholder
+    const imageHTML = project.coverImage
+      ? `<img src="${project.coverImage}" alt="${project.title}" class="project-image" loading="lazy">`
+      : `<div class="project-image-placeholder">${project.coverEmoji || "🗂️"}</div>`;
+
+    // links extra para proyectos personales (GitHub, npm)
+    const extraLinks = [
+      project.githubUrl
+        ? `<a href="${project.githubUrl}" target="_blank" rel="noopener" class="project-link-github"><i class="fab fa-github"></i> GitHub</a>`
+        : "",
+      project.npmUrl
+        ? `<a href="${project.npmUrl}" target="_blank" rel="noopener" class="project-link-npm"><i class="fab fa-npm"></i> npm</a>`
+        : "",
+    ]
+      .filter(Boolean)
+      .join("");
+
+    const primaryLink =
+      project.visitUrl && project.visitUrl !== "#"
+        ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
+        : project.category === "personal"
+        ? "" // sin "proyecto privado" para personales sin demo
+        : `<span class="disabled">${texts[lang].projects.privateProject}</span>`;
+
     const projectHTML = `
       <div class="project">
-        <img src="${project.coverImage}" alt="${project.title}" class="project-image" loading="lazy">
+        ${imageHTML}
         <div class="project-content">
           <div>
             <h3>${project.title}</h3>
@@ -137,12 +176,9 @@ function renderProjects(lang) {
           </div>
           <div>
             <div class="project-links">
-              ${
-                project.visitUrl && project.visitUrl !== "#"
-                  ? `<a href="${project.visitUrl}" target="_blank">${visit}</a>`
-                  : `<span class="disabled">${texts[lang].projects.privateProject}</span>`
-              }
-              <a href="javascript:void(0)" class="details" onclick="openProjectModal('${cont}')">${details}</a>
+              ${primaryLink}
+              ${extraLinks}
+              <a href="javascript:void(0)" class="details" onclick="openProjectModal(${realIndex})">${details}</a>
             </div>
             <div class="project-tech">
               ${project.tech.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
@@ -152,14 +188,13 @@ function renderProjects(lang) {
       </div>
     `;
     projectsContainer.insertAdjacentHTML("beforeend", projectHTML);
-    cont += 1;
   });
 }
+
 // textos para cada lenguaje
 const texts = {
   es: {
     nav: {
-      logo: "Jona Vicesar",
       about: "Sobre mí",
       projects: "Proyectos",
     },
@@ -180,10 +215,14 @@ const texts = {
       detailsBtn: "Ver detalles ->",
       modalFeatures: "Características principales",
       privateProject: "Proyecto privado",
+      filters: {
+        all: "Todos",
+        client: "Clientes",
+        personal: "Open Source / Personal",
+      },
     },
     footer: {
       contactTitle: "Contacto",
-      location: "Paraguay",
       available: "Disponible para proyectos",
       followTitle: "Sígueme",
       madeWith: "Hecho con ❤️ y mucho mate🧉.",
@@ -191,7 +230,6 @@ const texts = {
   },
   en: {
     nav: {
-      logo: "Jonathan",
       about: "About",
       projects: "Projects",
     },
@@ -212,10 +250,14 @@ const texts = {
       detailsBtn: "View details ->",
       modalFeatures: "Key features",
       privateProject: "Private project",
+      filters: {
+        all: "All",
+        client: "Clients",
+        personal: "Open Source / Personal",
+      },
     },
     footer: {
       contactTitle: "Contact",
-      location: "Paraguay",
       available: "Available for projects",
       followTitle: "Follow me",
       madeWith: "Made with ❤️ and lots of mate🧉.",
@@ -223,50 +265,50 @@ const texts = {
   },
 };
 
-//funcion para cambiar el idoma
+// cambiar el idioma
 function setLanguage(lang) {
-  userLanguage = lang; 
-  console.log('ACA', texts[lang])
+  userLanguage = lang;
   let text = texts[lang];
-  
-  const about = document.querySelector(
-    ".footer-content .available"
-  ).textContent;
-  console.log('aboutt',about);
 
-  //navbar
+  // navbar
   document.querySelector('a[href="#about"]').textContent = text.nav.about;
   document.querySelector('a[href="#projects"]').textContent = text.nav.projects;
 
-  //hero
+  // hero
   document.querySelector(".hero h1").textContent = text.hero.greeting;
   document.querySelector(".hero .subtitle").textContent = text.hero.subtitle;
-  document.querySelector(".hero .description").textContent =
-    text.hero.description;
-  document.querySelector(".hero .btn.btn-primary").textContent =
-    text.hero.emailBtn;
-  document.querySelector(".hero .btn.btn-secondary").textContent =
-    text.hero.cvBtn;
+  document.querySelector(".hero .description").textContent = text.hero.description;
+  document.querySelector(".hero .btn.btn-primary").textContent = text.hero.emailBtn;
+  document.querySelector(".hero .btn.btn-secondary").textContent = text.hero.cvBtn;
 
-  //about
+  // about
   document.querySelector(".about h3").textContent = text.about.techTitle;
 
-  //proyectos
+  // proyectos título
   document.querySelector(".projects h2").textContent = text.projects.title;
 
-  //footer
-  document.querySelector(".footer-content h3").textContent =
-    text.footer.contactTitle;
-  document.querySelector(".footer-content .available").textContent =
-    text.footer.available;
-  document.querySelector(".footer-right h3").textContent =
-    text.footer.followTitle;
+  // filtros — actualizar texto de los botones
+  const filterBtns = document.querySelectorAll(".filter-btn");
+  filterBtns.forEach((btn) => {
+    const key = btn.getAttribute("data-filter");
+    if (text.projects.filters[key]) {
+      btn.textContent = text.projects.filters[key];
+      if (btn.classList.contains("active")) {
+        // mantener active
+      }
+    }
+  });
+
+  // footer
+  document.querySelector(".footer-content h3").textContent = text.footer.contactTitle;
+  document.querySelector(".footer-content .available").textContent = text.footer.available;
+  document.querySelector(".footer-right h3").textContent = text.footer.followTitle;
   document.querySelector(".footer-bottom").textContent = text.footer.madeWith;
 
   renderProjects(lang);
 }
 
-//cambiar el idioma con los botones
+// cambiar el idioma con los botones
 document.querySelectorAll(".lang-btn").forEach((button) => {
   button.addEventListener("click", function () {
     const lang = this.getAttribute("data-lang");
@@ -275,13 +317,14 @@ document.querySelectorAll(".lang-btn").forEach((button) => {
 });
 
 // modal
-function openProjectModal(position) {
+function openProjectModal(realIndex) {
   const lang = userLanguage;
-  const project = projectData[userLanguage][position];
+  const project = projectData[lang][realIndex];
   const modalFeaturesTitle = texts[lang].projects.modalFeatures;
 
   const modal = document.getElementById("project-modal");
   const modalBody = document.getElementById("modal-body");
+
   const imagesHTML =
     project.images && project.images.length > 0
       ? `<div class="modal-images">
@@ -291,14 +334,32 @@ function openProjectModal(position) {
                src="${img}" 
                alt="${project.title}" 
                loading="lazy"
-               onclick="openLightbox('${img}', ${JSON.stringify(
-               project.images
-             ).replace(/"/g, "'")})"
+               onclick="openLightbox('${img}', ${JSON.stringify(project.images).replace(/"/g, "'")})"
                style="cursor: pointer;"
              >`
            )
            .join("")}
        </div>`
+      : "";
+
+  // links extra para proyectos personales
+  const extraLinksHTML = [
+    project.githubUrl
+      ? `<a href="${project.githubUrl}" target="_blank" rel="noopener" class="modal-extra-link"><i class="fab fa-github"></i> GitHub</a>`
+      : "",
+    project.npmUrl
+      ? `<a href="${project.npmUrl}" target="_blank" rel="noopener" class="modal-extra-link modal-extra-link--npm"><i class="fab fa-npm"></i> npm</a>`
+      : "",
+    project.visitUrl && project.visitUrl !== "#"
+      ? `<a href="${project.visitUrl}" target="_blank" rel="noopener" class="modal-extra-link modal-extra-link--demo"><i class="fas fa-external-link-alt"></i> ${texts[lang].projects.visitBtn}</a>`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("");
+
+  const extraLinksSection =
+    extraLinksHTML
+      ? `<div class="modal-extra-links">${extraLinksHTML}</div>`
       : "";
 
   modalBody.innerHTML = `
@@ -307,6 +368,7 @@ function openProjectModal(position) {
       <p class="project-type">${project.type}</p>
       <p>${project.description}</p>
       
+      ${extraLinksSection}
       ${imagesHTML}
       
       <div class="modal-features">
@@ -317,9 +379,7 @@ function openProjectModal(position) {
       </div>
       
       <div class="modal-tech">
-        ${project.tech
-          .map((tech) => `<span class="tech-badge">${tech}</span>`)
-          .join("")}
+        ${project.tech.map((tech) => `<span class="tech-badge">${tech}</span>`).join("")}
       </div>
     </div>
   `;
@@ -335,7 +395,6 @@ function closeProjectModal() {
 }
 
 // lightbox
-
 let currentImageIndex = 0;
 let currentImages = [];
 
@@ -362,15 +421,13 @@ function closeLightbox() {
 function previousImage() {
   currentImageIndex =
     (currentImageIndex - 1 + currentImages.length) % currentImages.length;
-  document.getElementById("lightbox-img").src =
-    currentImages[currentImageIndex];
+  document.getElementById("lightbox-img").src = currentImages[currentImageIndex];
   updateImageCounter();
 }
 
 function nextImage() {
   currentImageIndex = (currentImageIndex + 1) % currentImages.length;
-  document.getElementById("lightbox-img").src =
-    currentImages[currentImageIndex];
+  document.getElementById("lightbox-img").src = currentImages[currentImageIndex];
   updateImageCounter();
 }
 
@@ -381,20 +438,13 @@ function updateImageCounter() {
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("lightbox")?.addEventListener("click", function (e) {
-    if (e.target === this) {
-      closeLightbox();
-    }
+    if (e.target === this) closeLightbox();
   });
 
-  document
-    .getElementById("lightbox-close")
-    ?.addEventListener("click", closeLightbox);
-  document
-    .getElementById("lightbox-prev")
-    ?.addEventListener("click", previousImage);
-  document
-    .getElementById("lightbox-next")
-    ?.addEventListener("click", nextImage);
+  document.getElementById("lightbox-close")?.addEventListener("click", closeLightbox);
+  document.getElementById("lightbox-prev")?.addEventListener("click", previousImage);
+  document.getElementById("lightbox-next")?.addEventListener("click", nextImage);
+
   document.addEventListener("keydown", function (e) {
     const lightbox = document.getElementById("lightbox");
     if (lightbox && lightbox.style.display === "flex") {
