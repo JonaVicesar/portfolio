@@ -2,16 +2,12 @@
   "es": [
     {
       "id": "ornella-inventario",
+      "category": "client",
       "title": "Sistema de Gestión de Inventario",
       "type": "Web App con Panel Admin • Paraguay",
       "description": "Aplicación web completa para gestión de inventario con panel de administración. Sistema robusto para control de stock, productos y categorías con interfaz intuitiva y moderna.",
       "visitUrl": "",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "Supabase", "JavaScript", "CSS"],
       "features": [
         "Gestión completa de inventario",
         "Control de stock en tiempo real",
@@ -26,21 +22,16 @@
         "assets/projects/ornella-inventario/img3.png",
         "assets/projects/ornella-inventario/img4.png"
       ],
-      "coverImage": [
-        "assets/projects/ornella-inventario/img1.png"
-      ]
+      "coverImage": "assets/projects/ornella-inventario/img1.png"
     },
     {
       "id": "ornella-floreria",
+      "category": "client",
       "title": "Florería Ornella",
       "type": "Catálogo Web con Sistema de Pedidos • Paraguay",
       "description": "Catálogo digital moderno para florería con sistema automatizado de pedidos por WhatsApp. Interfaz intuitiva que permite a los clientes explorar productos por categorías y enviar pedidos formateados directamente al chat de WhatsApp de la empresa.",
       "visitUrl": "https://ornella.pages.dev",
-      "tech": [
-        "React",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "JavaScript", "CSS"],
       "features": [
         "Catálogo de productos organizado por categorías",
         "Sistema de carrito de compras interactivo",
@@ -57,21 +48,16 @@
         "assets/projects/ornella-floreria/img2.png",
         "assets/projects/ornella-floreria/img3.png"
       ],
-      "coverImage": [
-        "assets/projects/ornella-floreria/img1.png"
-      ]
+      "coverImage": "assets/projects/ornella-floreria/img1.png"
     },
     {
       "id": "rgtraslados",
+      "category": "client",
       "title": "RgTraslados",
       "type": "Sitio web empresarial • Argentina",
       "description": "Sitio web completo para empresa de remises con diseño moderno y funcional. Página ligera optimizada para conversión, adaptada específicamente a las necesidades del cliente.",
       "visitUrl": "https://rgtraslados.com",
-      "tech": [
-        "Astro",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["Astro", "JavaScript", "CSS"],
       "features": [
         "Diseño responsivo y moderno",
         "Optimización para velocidad de carga",
@@ -87,21 +73,16 @@
         "assets/projects/rgtraslados/img5.png",
         "assets/projects/rgtraslados/img6.png"
       ],
-      "coverImage": [
-        "assets/projects/rgtraslados/img2.png"
-      ]
+      "coverImage": "assets/projects/rgtraslados/img2.png"
     },
     {
       "id": "carpinteria",
+      "category": "client",
       "title": "Carpintería Los González",
       "type": "Web App con Panel Admin • Paraguay",
       "description": "Aplicación web completa con frontend en React y panel de administración. Incluye gestión de contenido dinámico, base de datos y versión pública optimizada.",
       "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript"
-      ],
+      "tech": ["React", "Supabase", "JavaScript"],
       "features": [
         "Panel de administración intuitivo",
         "Gestión de productos y servicios",
@@ -118,22 +99,16 @@
         "assets/projects/carpinteria/img6.png",
         "assets/projects/carpinteria/img7.png"
       ],
-      "coverImage": [
-        "assets/projects/carpinteria/img1.png"
-      ]
+      "coverImage": "assets/projects/carpinteria/img1.png"
     },
     {
       "id": "hashtag-celu",
+      "category": "client",
       "title": "HashtagCelu",
       "type": "Catálogo Web con Panel Admin • Argentina",
-      "description": "Catálogo digital para tienda de celulares y accesorios con sistema automatizado de pedidos por WhatsApp y panel de administración completo. Los clientes exploran productos por categorías, arman su pedido y lo envían formateado directamente al WhatsApp de la tienda. El panel admin permite gestionar pedidos, imprimir tickets y actualizar el catálogo en tiempo real con notificaciones.",
+      "description": "Catálogo digital para tienda de celulares y accesorios con sistema automatizado de pedidos por WhatsApp y panel de administración completo.",
       "visitUrl": "https://catalogo-hashtagcelu.pages.dev/",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "Supabase", "JavaScript", "CSS"],
       "features": [
         "Catálogo de productos organizado por categorías",
         "Sistema de carrito de compras interactivo",
@@ -154,22 +129,16 @@
         "assets/projects/hashtagcelu/img4.jpg",
         "assets/projects/hashtagcelu/img5.png"
       ],
-      "coverImage": [
-        "assets/projects/hashtagcelu/img5.png"
-      ]
+      "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
     {
       "id": "spotify-stats",
+      "category": "personal",
       "title": "Spotify Personal Analytics",
-      "type": "Herramienta de análisis musical personal",
-      "description": "Aplicación personal que utiliza la API de Spotify para generar estadísticas musicales personalizadas - top artistas, álbumes y canciones más escuchadas.",
+      "type": "Herramienta personal",
+      "description": "Aplicación personal que utiliza la API de Spotify para generar estadísticas musicales personalizadas — top artistas, álbumes y canciones más escuchadas.",
       "visitUrl": "#",
-      "tech": [
-        "React",
-        "Spotify API",
-        "OAuth",
-        "JavaScript"
-      ],
+      "tech": ["React", "Spotify API", "OAuth", "JavaScript"],
       "features": [
         "Top artistas personalizados",
         "Estadísticas de canciones más escuchadas",
@@ -184,24 +153,40 @@
         "assets/projects/spotistats/img4.png",
         "assets/projects/spotistats/img5.png"
       ],
-      "coverImage": [
-        "assets/projects/spotistats/img1.png"
-      ]
+      "coverImage": "assets/projects/spotistats/img1.png"
+    },
+    {
+      "id": "sheetsbase",
+      "category": "personal",
+      "title": "SheetsBase",
+      "type": "Librería Open Source • npm",
+      "description": "Cliente de consultas para Google Sheets con una API similar a Supabase. En lugar de lidiar con la API cruda de Google Sheets, tenés una interfaz encadenada y limpia para hacer CRUD, filtros, caché automático e IDs.",
+      "visitUrl": "https://sheetsbase-example.onrender.com",
+      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
+      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
+      "coverImage": "",
+      "coverEmoji": "📦",
+      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
+      "features": [
+        "API encadenada estilo Supabase: .select(), .eq(), .gt(), .order(), .limit()",
+        "CRUD completo con generación automática de IDs (UUID, short, timestamp, readable)",
+        "Caché integrado con TTL de 5 min y auto-invalidación en escrituras (~160x más rápido en hits)",
+        "Sin servidor separado — corre directo en tu app Node.js",
+        "Autenticación por Service Account de Google Cloud",
+        "Demo en vivo: coffee-shop dashboard conectado a una hoja real"
+      ],
+      "images": []
     }
   ],
   "en": [
     {
       "id": "ornella-inventario",
+      "category": "client",
       "title": "Inventory Management System",
       "type": "Web App with Admin Panel • Paraguay",
       "description": "Complete web application for inventory management with administration panel. Robust system for stock control, products and categories with intuitive and modern interface.",
       "visitUrl": "",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "Supabase", "JavaScript", "CSS"],
       "features": [
         "Complete inventory management",
         "Real-time stock control",
@@ -216,21 +201,16 @@
         "assets/projects/ornella-inventario/img3.png",
         "assets/projects/ornella-inventario/img4.png"
       ],
-      "coverImage": [
-        "assets/projects/ornella-inventario/img1.png"
-      ]
+      "coverImage": "assets/projects/ornella-inventario/img1.png"
     },
     {
       "id": "ornella-floreria",
+      "category": "client",
       "title": "Florería Ornella",
       "type": "Web Catalog with Order System • Paraguay",
       "description": "Modern digital catalog for flower shop with automated WhatsApp ordering system. Intuitive interface that allows customers to browse products by categories and send formatted orders directly to the company's WhatsApp chat.",
       "visitUrl": "https://ornella.pages.dev",
-      "tech": [
-        "React",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "JavaScript", "CSS"],
       "features": [
         "Product catalog organized by categories",
         "Interactive shopping cart system",
@@ -247,21 +227,16 @@
         "assets/projects/ornella-floreria/img2.png",
         "assets/projects/ornella-floreria/img3.png"
       ],
-      "coverImage": [
-        "assets/projects/ornella-floreria/img1.png"
-      ]
+      "coverImage": "assets/projects/ornella-floreria/img1.png"
     },
     {
       "id": "rgtraslados",
+      "category": "client",
       "title": "RgTraslados",
       "type": "Business Website • Argentina",
       "description": "Complete website for transportation company with modern and functional design. Lightweight page optimized for conversion, specifically adapted to client needs.",
       "visitUrl": "https://rgtraslados.com",
-      "tech": [
-        "Astro",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["Astro", "JavaScript", "CSS"],
       "features": [
         "Responsive and modern design",
         "Loading speed optimization",
@@ -277,21 +252,16 @@
         "assets/projects/rgtraslados/img5.png",
         "assets/projects/rgtraslados/img6.png"
       ],
-      "coverImage": [
-        "assets/projects/rgtraslados/img2.png"
-      ]
+      "coverImage": "assets/projects/rgtraslados/img2.png"
     },
     {
       "id": "carpinteria",
+      "category": "client",
       "title": "Carpintería Los González",
       "type": "Web App with Admin Panel • Paraguay",
       "description": "Complete web application with React frontend and administration panel. Includes dynamic content management, database and optimized public version.",
       "visitUrl": "https://carpinteria-los-gonzalez-website.pages.dev/",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript"
-      ],
+      "tech": ["React", "Supabase", "JavaScript"],
       "features": [
         "Intuitive administration panel",
         "Product and services management",
@@ -308,22 +278,16 @@
         "assets/projects/carpinteria/img6.png",
         "assets/projects/carpinteria/img7.png"
       ],
-      "coverImage": [
-        "assets/projects/carpinteria/img1.png"
-      ]
+      "coverImage": "assets/projects/carpinteria/img1.png"
     },
     {
       "id": "hashtag-celu",
+      "category": "client",
       "title": "HashtagCelu",
       "type": "Web Catalog with Admin Panel • Argentina",
-      "description": "Digital catalog for a phone and accessories store with automated WhatsApp ordering system and complete administration panel. Customers browse products by category, build their order and send it formatted directly to the store's WhatsApp. The admin panel allows managing orders, printing tickets and updating the catalog in real time with notifications.",
+      "description": "Digital catalog for a phone and accessories store with automated WhatsApp ordering system and complete administration panel.",
       "visitUrl": "https://catalogo-hashtagcelu.pages.dev/",
-      "tech": [
-        "React",
-        "Supabase",
-        "JavaScript",
-        "CSS"
-      ],
+      "tech": ["React", "Supabase", "JavaScript", "CSS"],
       "features": [
         "Product catalog organized by categories",
         "Interactive shopping cart system",
@@ -344,22 +308,16 @@
         "assets/projects/hashtagcelu/img4.jpg",
         "assets/projects/hashtagcelu/img5.png"
       ],
-      "coverImage": [
-        "assets/projects/hashtagcelu/img5.png"
-      ]
+      "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
     {
       "id": "spotify-stats",
+      "category": "personal",
       "title": "Spotify Personal Analytics",
-      "type": "Personal Music Analytics Tool",
-      "description": "Personal application using Spotify API to generate personalized music statistics - top artists, albums and most played songs.",
+      "type": "Personal Tool",
+      "description": "Personal application using Spotify API to generate personalized music statistics — top artists, albums and most played songs.",
       "visitUrl": "#",
-      "tech": [
-        "React",
-        "Spotify API",
-        "OAuth",
-        "JavaScript"
-      ],
+      "tech": ["React", "Spotify API", "OAuth", "JavaScript"],
       "features": [
         "Personalized top artists",
         "Most played songs statistics",
@@ -374,9 +332,29 @@
         "assets/projects/spotistats/img4.png",
         "assets/projects/spotistats/img5.png"
       ],
-      "coverImage": [
-        "assets/projects/spotistats/img1.png"
-      ]
+      "coverImage": "assets/projects/spotistats/img1.png"
+    },
+    {
+      "id": "sheetsbase",
+      "category": "personal",
+      "title": "SheetsBase",
+      "type": "Open Source Library • npm",
+      "description": "A query client for Google Sheets with a Supabase-like API. Instead of dealing with the raw Google Sheets API, you get a clean chainable interface for CRUD, filters, built-in cache, and auto IDs.",
+      "visitUrl": "https://sheetsbase-example.onrender.com",
+      "githubUrl": "https://github.com/JonaVicesar/sheetsbase",
+      "npmUrl": "https://www.npmjs.com/package/@sheetsbase/client",
+      "coverImage": "",
+      "coverEmoji": "📦",
+      "tech": ["Node.js", "JavaScript", "Google Sheets API", "npm"],
+      "features": [
+        "Supabase-like chainable API: .select(), .eq(), .gt(), .order(), .limit()",
+        "Full CRUD with automatic ID generation (UUID, short, timestamp, readable)",
+        "Built-in cache with 5-min TTL and auto-invalidation on writes (~160x faster on hits)",
+        "No separate server needed — runs directly in your Node.js app",
+        "Google Cloud Service Account authentication",
+        "Live demo: coffee-shop dashboard connected to a real spreadsheet"
+      ],
+      "images": []
     }
   ]
 }
