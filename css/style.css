@@ -938,3 +938,124 @@ footer {
 .tech-section .tech-badge i {
   font-size: 13px;
 }
+
+
+/* -- Header de la sección con título + filtros -- */
+.projects-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.projects-header h2 {
+  margin-bottom: 0 !important; /* override el margin del h2 original */
+}
+
+/* -- Botones de filtro -- */
+.project-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  background-color: var(--tech-bg);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.filter-btn.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* -- Links extra en cards (GitHub, npm) -- */
+.project-link-github,
+.project-link-npm {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.project-link-github:hover {
+  color: var(--text-primary);
+}
+
+.project-link-npm:hover {
+  color: #cb3837;
+}
+
+/* -- Links extra en modal -- */
+.modal-extra-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.modal-extra-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.modal-extra-link:hover {
+  background-color: var(--tech-bg);
+  color: var(--text-primary);
+}
+
+.modal-extra-link--npm:hover {
+  color: #cb3837;
+  border-color: #cb3837;
+}
+
+.modal-extra-link--demo:hover {
+  color: #2b6cb0;
+  border-color: #2b6cb0;
+}
+
+/* -- Responsive filtros -- */
+@media (max-width: 600px) {
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 4px 12px;
+  }
+}
