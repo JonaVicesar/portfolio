@@ -131,7 +131,7 @@
       ],
       "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
-        {
+    {
       "id": "sheetsbase",
       "category": "personal",
       "title": "SheetsBase",
@@ -152,6 +152,33 @@
         "Demo en vivo: coffee-shop dashboard conectado a una hoja real"
       ],
       "images": []
+    },
+    {
+      "id": "spoti-lyrics",
+      "category": "personal",
+      "title": "SpotiLyrics",
+      "type": "Herramienta Web • Exportación de Letras",
+      "description": "Herramienta web para buscar, personalizar y exportar letras de canciones en formato de imagen PNG con alta fidelidad. Surgió como solución ante la falta de herramientas accesibles para generar contenido visual con letras y estética moderna.",
+      "visitUrl": "https://spoti-lyrics.vercel.app/",
+      "githubUrl": "https://github.com/JonaVicesar/spoti-lyrics",
+      "coverImage": "",
+      "coverEmoji": "🎵",
+      "tech": ["React", "Vite", "JavaScript", "iTunes Search API", "IRClib", "Vercel"],
+      "features": [
+        "Búsqueda de canciones con metadatos vía iTunes Search API",
+        "Obtención de letras sincronizadas mediante IRClib",
+        "Edición de fragmentos específicos de la letra",
+        "Exportación del diseño final como imagen PNG de alta fidelidad",
+        "Personalización visual del layout",
+        "Optimizado para la creación de contenido visual"
+      ],
+      "images": [
+        "assets/projects/spoti-lyrics/img1.png",
+        "assets/projects/spoti-lyrics/img2.png",
+        "assets/projects/spoti-lyrics/img3.png",
+        "assets/projects/spoti-lyrics/img4.png"
+      ],
+      "coverImage":"assets/projects/spoti-lyrics/img1.png"
     },
     {
       "id": "spotify-stats",
@@ -310,7 +337,7 @@
       ],
       "coverImage": "assets/projects/hashtagcelu/img5.png"
     },
-        {
+    {
       "id": "sheetsbase",
       "category": "personal",
       "title": "SheetsBase",
@@ -331,6 +358,33 @@
         "Live demo: coffee-shop dashboard connected to a real spreadsheet"
       ],
       "images": []
+    },
+    {
+      "id": "spoti-lyrics",
+      "category": "personal",
+      "title": "SpotiLyrics",
+      "type": "Web Tool • Lyrics Exporter",
+      "description": "Web tool to search, customize and export song lyrics as high-fidelity PNG images. Built as a solution to the lack of accessible tools for generating visual content with lyrics and modern aesthetics.",
+      "visitUrl": "https://spoti-lyrics.vercel.app/",
+      "githubUrl": "https://github.com/JonaVicesar/spoti-lyrics",
+      "coverImage": "",
+      "coverEmoji": "🎵",
+      "tech": ["React", "Vite", "JavaScript", "iTunes Search API", "IRClib", "Vercel"],
+      "features": [
+        "Song search with metadata via iTunes Search API",
+        "Synchronized lyrics fetching through IRClib",
+        "Edit specific lyric fragments",
+        "Export final design as high-fidelity PNG image",
+        "Visual layout customization",
+        "Optimized for visual content creation"
+      ],
+      "images": [
+        "assets/projects/spoti-lyrics/img1.png",
+        "assets/projects/spoti-lyrics/img2.png",
+        "assets/projects/spoti-lyrics/img3.png",
+        "assets/projects/spoti-lyrics/img4.png"
+      ],
+      "coverImage":"assets/projects/spoti-lyrics/img1.png"
     },
     {
       "id": "spotify-stats",
