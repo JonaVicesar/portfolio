@@ -73,7 +73,7 @@ document.getElementById("download-cv").addEventListener("click", function (e) {
   e.preventDefault();
   const lang = userLanguage === "en" ? "en" : "es";
   const link = document.createElement("a");
-  link.href = `assets/cv/Jonathan_Vicesar_CV_Portfolio_${lang.toUpperCase()}.pdf`;
+  link.href = `assets/cv/Jonathan_Vicesar_CV_${lang.toUpperCase()}.pdf`;
   link.download = `Jonathan_Vicesar_CV_${lang.toUpperCase()}.pdf`;
   link.click();
 });
